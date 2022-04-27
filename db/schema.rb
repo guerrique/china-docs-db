@@ -10,10 +10,38 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_04_27_162249) do
+ActiveRecord::Schema.define(version: 2022_04_27_164836) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "directors", force: :cascade do |t|
+    t.string "name"
+    t.string "bio_short"
+    t.string "bio_long"
+    t.string "birth_year"
+    t.string "death_year"
+    t.string "bio_source"
+    t.string "useful_links", default: [], array: true
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "docs", force: :cascade do |t|
+    t.string "name"
+    t.string "chinese_name"
+    t.string "year"
+    t.string "duration"
+    t.string "poster"
+    t.string "doc_summary_short"
+    t.string "doc_summary_long"
+    t.string "doc_summary_source"
+    t.string "awards", default: [], array: true
+    t.string "trailer_link"
+    t.string "useful_links", default: [], array: true
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
