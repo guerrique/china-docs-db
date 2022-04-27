@@ -5,3 +5,16 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+puts "Cleaning database..."
+Doc.destroy_all
+
+puts "Creating docs..."
+mercredi = { name: "Mercredi" }
+pizza_east =  { name: "Pizza East" }
+
+[ mercredi, pizza_east ].each do |attributes|
+  doc = Doc.create!(attributes)
+  puts "Created #{doc.name}"
+end
+puts "Finished!"
