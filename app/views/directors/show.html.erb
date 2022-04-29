@@ -1,1 +1,9 @@
 <h2><%= @director.name %></h2>
+<p><%= @director.bio_short %></p>
+<p><%= @director.bio_long  %></p>
+<p><%= @director.bio_source  %></p>
+<p><%= @director.birth_year  %></p>
+<p><%= @director.death_year  %></p>
+
+<%= link_to "Edit", edit_director_path(@director) %>
+<%= link_to "Delete", director_path(@director), method: :delete %>
