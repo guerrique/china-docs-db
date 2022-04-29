@@ -1,5 +1,8 @@
 <ul>
   <% @docs.each do |doc| %>
-    <li><%= doc.name %></li>
+    <li><%= link_to doc.name, doc_path(doc) %></li>
+    <%= link_to "Edit", edit_doc_path(doc) %>
+    <%= link_to "Delete", doc_path(doc), method: :delete %>
   <% end %>
 </ul>
+
