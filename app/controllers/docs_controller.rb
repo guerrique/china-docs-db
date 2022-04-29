@@ -32,6 +32,13 @@ class DocsController < ApplicationController
     redirect_to doc_path(@doc)
   end
 
+  def destroy
+    @doc = Doc.find(params[:id])
+    @doc.destroy
+
+    redirect_to docs_path
+  end
+
   private
 
   def doc_params
