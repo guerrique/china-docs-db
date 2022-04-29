@@ -21,6 +21,17 @@ class DirectorsController < ApplicationController
     end
   end
 
+  def edit
+    @director = Director.find(params[:id])
+  end
+
+  def update
+    @director = Director.find(params[:id])
+    @director.update(director_params)
+
+    redirect_to director_path(@director)
+  end
+
   private
 
   def director_params

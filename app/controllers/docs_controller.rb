@@ -21,6 +21,17 @@ class DocsController < ApplicationController
     end
   end
 
+  def edit
+    @doc = Doc.find(params[:id])
+  end
+
+  def update
+    @doc = Doc.find(params[:id])
+    @doc.update(doc_params)
+
+    redirect_to doc_path(@doc)
+  end
+
   private
 
   def doc_params
