@@ -1,2 +1,10 @@
 <h2><%= @doc.name %></h2>
-
+<p><%= @doc.chinese_name %></p>
+<p><%= @doc.year  %></p>
+<p><%= @doc.duration  %></p>
+<p><%= @doc.doc_summary_short  %></p>
+<p><%= @doc.doc_summary_long  %></p>
+<p><%= @doc.doc_summary_source  %></p>
+<p><%= @doc.trailer_link  %></p>
+<%= link_to "Edit", edit_doc_path(@doc) %>
+<%= link_to "Delete", doc_path(@doc), method: :delete %>

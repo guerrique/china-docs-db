@@ -1,4 +1,11 @@
 <%= simple_form_for @doc, url: docs_path do |f| %>
   <%= f.input :name %>
+  <%= f.input :chinese_name %>
+  <%= f.input :year %>
+  <%= f.input :duration %>
+  <%= f.input :doc_summary_short %>
+  <%= f.input :doc_summary_long %>
+  <%= f.input :doc_summary_source %>
+  <%= f.input :trailer_link, as: :url %>
   <%= f.button :submit %>
 <% end %>
