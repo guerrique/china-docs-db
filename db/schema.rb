@@ -10,10 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_04_28_035856) do
+ActiveRecord::Schema.define(version: 2022_04_29_101419) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "awards", force: :cascade do |t|
+    t.string "name"
+    t.string "location"
+    t.string "year"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.bigint "doc_id"
+    t.index ["doc_id"], name: "index_awards_on_doc_id"
+  end
 
   create_table "directors", force: :cascade do |t|
     t.string "name"
@@ -36,7 +46,6 @@ ActiveRecord::Schema.define(version: 2022_04_28_035856) do
     t.string "doc_summary_short"
     t.string "doc_summary_long"
     t.string "doc_summary_source"
-    t.string "awards", default: [], array: true
     t.string "trailer_link"
     t.string "useful_links", default: [], array: true
     t.datetime "created_at", precision: 6, null: false
@@ -64,4 +73,5 @@ ActiveRecord::Schema.define(version: 2022_04_28_035856) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "awards", "docs"
 end
