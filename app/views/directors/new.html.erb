@@ -1,4 +1,10 @@
 <%= simple_form_for @director, url: directors_path do |f| %>
   <%= f.input :name %>
+  <%= f.input :bio_short %>
+  <%= f.input :bio_long %>
+  <%= f.input :bio_source %>
+  <%= f.input :birth_year %>
+  <%= f.input :death_year %>
+
   <%= f.button :submit %>
 <% end %>

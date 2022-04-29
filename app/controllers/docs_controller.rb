@@ -42,6 +42,6 @@ class DocsController < ApplicationController
   private
 
   def doc_params
-    params.require(:doc).permit(:name)
+    params.require(:doc).permit(:name, :chinese_name, :year, :duration, :doc_summary_short, :doc_summary_long, :doc_summary_source, :trailer_link)
   end
 end
