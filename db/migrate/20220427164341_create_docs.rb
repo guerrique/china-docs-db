@@ -9,7 +9,6 @@ class CreateDocs < ActiveRecord::Migration[6.1]
       t.string :doc_summary_short
       t.string :doc_summary_long
       t.string :doc_summary_source
-      t.string :awards, default: [], array: true
       t.string :trailer_link
       t.string :useful_links, default: [], array: true
 
