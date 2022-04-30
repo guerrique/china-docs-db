@@ -6,6 +6,17 @@
   <%= f.input :doc_summary_short %>
   <%= f.input :doc_summary_long %>
   <%= f.input :doc_summary_source %>
+  <h2>Awards</h2>
+  <%= f.simple_fields_for :awards do |a| %>
+    <%= a.input :name %>
+    <%= a.input :location %>
+    <%= a.input :year %>
+    <% end %>
   <%= f.input :trailer_link, as: :url %>
+  <h2>Useful Links</h2>
+  <%= f.simple_fields_for :goodlinks do |g| %>
+    <%= g.input :description %>
+    <%= g.input :link %>
+    <% end %>
   <%= f.button :submit %>
 <% end %>

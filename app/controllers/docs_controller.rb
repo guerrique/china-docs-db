@@ -9,6 +9,8 @@ class DocsController < ApplicationController
 
   def new
     @doc = Doc.new # needed to instantiate the form_for
+    @doc.awards.build
+    @doc.goodlinks.build
   end
 
   def create
@@ -42,6 +44,17 @@ class DocsController < ApplicationController
   private
 
   def doc_params
-    params.require(:doc).permit(:name, :chinese_name, :year, :duration, :doc_summary_short, :doc_summary_long, :doc_summary_source, :trailer_link)
+    params.require(:doc)
+    .permit(:name,
+      :chinese_name,
+      :year,
+      :duration,
+      :doc_summary_short,
+      :doc_summary_long,
+      :doc_summary_source,
+      :trailer_link,
+      awards_attributes: [:id, :name, :year, :location],
+      goodlinks_attributes: [:id, :description, :link]
+      )
   end
 end
