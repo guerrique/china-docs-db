@@ -14,9 +14,9 @@
     <% end %>
   <%= f.input :trailer_link, as: :url %>
   <h2>Useful Links</h2>
-  <%= f.simple_fields_for :goodlinks do |g| %>
+  <%= f.simple_fields_for :links do |g| %>
     <%= g.input :description %>
-    <%= g.input :link %>
+    <%= g.input :url %>
     <% end %>
   <%= f.button :submit %>
 <% end %>

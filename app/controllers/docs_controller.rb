@@ -10,7 +10,7 @@ class DocsController < ApplicationController
   def new
     @doc = Doc.new # needed to instantiate the form_for
     @doc.awards.build
-    @doc.goodlinks.build
+    @doc.links.build
   end
 
   def create
@@ -54,7 +54,7 @@ class DocsController < ApplicationController
       :doc_summary_source,
       :trailer_link,
       awards_attributes: [:id, :name, :year, :location],
-      goodlinks_attributes: [:id, :description, :link]
+      links_attributes: [:id, :description, :url]
       )
   end
 end
