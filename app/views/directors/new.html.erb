@@ -5,10 +5,15 @@
   <%= f.input :bio_source %>
   <%= f.input :birth_year %>
   <%= f.input :death_year %>
-h2>To go further</h2>
-  <%= f.simple_fields_for :pages do |p| %>
-    <%= p.input :description %>
-    <%= p.input :url %>
-    <% end %>
+<h2>To go further</h2>
+<%= f.simple_fields_for :pages do |page| %>
+<%= render 'page_fields', f: page %>
+<% end %>
+<div class="links">
+  <%= link_to_add_association 'add link', f, :pages %>
+</div>
+
+
+
   <%= f.button :submit %>
 <% end %>

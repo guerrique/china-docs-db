@@ -50,6 +50,6 @@ class DirectorsController < ApplicationController
       :bio_source,
       :birth_year,
       :death_year,
-      pages_attributes: [:id, :description, :url])
+      pages_attributes: [:id, :description, :url, :_destroy])
   end
 end
