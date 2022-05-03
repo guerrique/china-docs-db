@@ -4,6 +4,8 @@
 <p><%= @director.bio_source  %></p>
 <p><%= @director.birth_year  %></p>
 <p><%= @director.death_year  %></p>
-
+<% @director.pages.each do |page| %>
+<p><%= page.description %>, <%= page.url %></p>
+<% end %>
 <%= link_to "Edit", edit_director_path(@director) %>
 <%= link_to "Delete", director_path(@director), method: :delete %>

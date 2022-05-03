@@ -9,6 +9,7 @@ class DirectorsController < ApplicationController
 
   def new
     @director = Director.new # needed to instantiate the form_for
+    @director.pages.build
   end
 
   def create
@@ -42,6 +43,13 @@ class DirectorsController < ApplicationController
   private
 
   def director_params
-    params.require(:director).permit(:name, :bio_short, :bio_long, :bio_source, :birth_year, :death_year)
+    params.require(:director)
+    .permit(:name,
+      :bio_short,
+      :bio_long,
+      :bio_source,
+      :birth_year,
+      :death_year,
+      pages_attributes: [:id, :description, :url])
   end
 end
