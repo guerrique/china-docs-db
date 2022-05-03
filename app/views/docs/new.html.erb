@@ -7,12 +7,18 @@
   <%= f.input :doc_summary_long %>
   <%= f.input :doc_summary_source %>
   <h2>Awards</h2>
-  <%= f.simple_fields_for :awards do |a| %>
-    <%= a.input :name %>
-    <%= a.input :location %>
-    <%= a.input :year %>
-    <% end %>
+  <%= f.simple_fields_for :awards do |award| %>
+    <%= render 'award_fields', f: award %>
+  <% end %>
+  <div class='links'>
+
+  <%= link_to_add_association 'add award', f, :awards %>
+    </div>
+
+
   <%= f.input :trailer_link, as: :url %>
+
+
   <h2>Useful Links</h2>
   <%= f.simple_fields_for :links do |g| %>
     <%= g.input :description %>
@@ -20,3 +26,5 @@
     <% end %>
   <%= f.button :submit %>
 <% end %>
+
+
