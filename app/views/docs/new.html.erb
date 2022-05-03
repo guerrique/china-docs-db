@@ -6,6 +6,7 @@
   <%= f.input :doc_summary_short %>
   <%= f.input :doc_summary_long %>
   <%= f.input :doc_summary_source %>
+   <%= f.input :poster, as: :file %>
   <h2>Awards</h2>
   <%= f.simple_fields_for :awards do |award| %>
     <%= render 'award_fields', f: award %>
