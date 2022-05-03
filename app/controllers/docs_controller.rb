@@ -54,7 +54,7 @@ class DocsController < ApplicationController
       :doc_summary_source,
       :trailer_link,
       awards_attributes: [:id, :name, :year, :location, :_destroy],
-      links_attributes: [:id, :description, :url]
+      links_attributes: [:id, :description, :url, :_destroy]
       )
   end
 end

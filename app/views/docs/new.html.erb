@@ -11,19 +11,17 @@
     <%= render 'award_fields', f: award %>
   <% end %>
   <div class='links'>
-
   <%= link_to_add_association 'add award', f, :awards %>
-    </div>
-
-
+  </div>
   <%= f.input :trailer_link, as: :url %>
-
-
   <h2>Useful Links</h2>
-  <%= f.simple_fields_for :links do |g| %>
-    <%= g.input :description %>
-    <%= g.input :url %>
-    <% end %>
+  <%= f.simple_fields_for :links do |link| %>
+  <%= render 'link_fields', f: link %>
+  <% end %>
+  <div class="links">
+    <%= link_to_add_association 'add link', f, :links %>
+  </div>
+
   <%= f.button :submit %>
 <% end %>
 
