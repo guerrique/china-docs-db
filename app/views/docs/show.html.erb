@@ -2,6 +2,7 @@
 <p><%= @doc.chinese_name %></p>
 <p><%= @doc.year  %></p>
 <p><%= @doc.duration  %></p>
+<p><%= cl_image_tag @doc.poster.key, height: 300, width: 400, crop: :fill %></p>
 <p><%= @doc.doc_summary_short  %></p>
 <p><%= @doc.doc_summary_long  %></p>
 <p><%= @doc.doc_summary_source  %></p>

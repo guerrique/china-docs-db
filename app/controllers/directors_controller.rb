@@ -1,4 +1,5 @@
 class DirectorsController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:index, :show]
   def index
     @directors = Director.all
   end
@@ -50,6 +51,7 @@ class DirectorsController < ApplicationController
       :bio_source,
       :birth_year,
       :death_year,
+      :photo,
       pages_attributes: [:id, :description, :url, :_destroy])
   end
 end

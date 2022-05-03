@@ -24,6 +24,7 @@ gem 'redis', '~> 4.0'
 
 gem "cocoon"
 gem 'jquery-rails'
+gem 'cloudinary'
 
 
 # Use Active Storage variant

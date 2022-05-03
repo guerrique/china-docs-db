@@ -4,6 +4,7 @@
 <p><%= @director.bio_source  %></p>
 <p><%= @director.birth_year  %></p>
 <p><%= @director.death_year  %></p>
+<p><%= cl_image_tag @director.photo.key, height: 300, width: 400, crop: :fill %></p>
 <% @director.pages.each do |page| %>
 <p><%= page.description %>, <%= page.url %></p>
 <% end %>
