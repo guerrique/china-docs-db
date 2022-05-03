@@ -6,5 +6,11 @@
 <p><%= @doc.doc_summary_long  %></p>
 <p><%= @doc.doc_summary_source  %></p>
 <p><%= @doc.trailer_link  %></p>
+<% @doc.awards.each do |award| %>
+<p><%= award.name %>, <%= award.year %>, <%= award.location %></p>
+<% end %>
+<% @doc.links.each do |link| %>
+<p><%= link.description %>: <%= link.url %></p>
+<% end %>
 <%= link_to "Edit", edit_doc_path(@doc) %>
 <%= link_to "Delete", doc_path(@doc), method: :delete %>
