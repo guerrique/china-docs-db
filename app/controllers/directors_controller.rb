@@ -11,6 +11,7 @@ class DirectorsController < ApplicationController
   def new
     @director = Director.new # needed to instantiate the form_for
     @director.pages.build
+    @director.docs.build
   end
 
   def create
@@ -52,6 +53,8 @@ class DirectorsController < ApplicationController
       :birth_year,
       :death_year,
       :photo,
-      pages_attributes: [:id, :description, :url, :_destroy])
+      doc_ids: [],
+      pages_attributes: [:id, :description, :url, :_destroy],
+      directors_attributes: [:id, :name])
   end
 end

@@ -5,6 +5,8 @@
   <%= f.input :bio_source %>
   <%= f.input :birth_year %>
   <%= f.input :death_year %>
+  <%= f.collection_check_boxes :doc_ids, Doc.all, :id, :name, multiple: true%>
+
    <%= f.input :photo, as: :file %>
 <h2>To go further</h2>
 <%= f.simple_fields_for :pages do |page| %>

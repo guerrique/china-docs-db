@@ -7,6 +7,8 @@
   <%= f.input :doc_summary_long %>
   <%= f.input :doc_summary_source %>
    <%= f.input :poster, as: :file %>
+   <%= f.collection_check_boxes :director_ids, Director.all, :id, :name, multiple: true%>
+
   <h2>Awards</h2>
   <%= f.simple_fields_for :awards do |award| %>
     <%= render 'award_fields', f: award %>
