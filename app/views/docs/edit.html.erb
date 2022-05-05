@@ -1,21 +1,48 @@
 
 
 <%= simple_form_for @doc, url: doc_path do |f| %>
-<%= f.label :name %>
-  <%= f.text_field :name %>
-<%= f.label :chinese_name %>
-  <%= f.text_field :chinese_name %>
-  <%= f.label :year %>
-  <%= f.text_field :year %>
-  <%= f.label :duration %>
-  <%= f.text_field :duration %>
-  <%= f.label :doc_summary_short %>
-  <%= f.text_field :doc_summary_short %>
-  <%= f.label :doc_summary_long %>
-  <%= f.text_field :doc_summary_long %>
-  <%= f.label :doc_summary_source %>
-  <%= f.text_field :doc_summary_source %>
-  <%= f.label :trailer_link %>
-  <%= f.text_field :trailer_link %>
-  <%= f.button :submit %>
+<p><%= f.label :name %></p>
+  <p> <%= f.text_field :name %></p>
+<p> <%= f.label :chinese_name %></p>
+  <p> <%= f.text_field :chinese_name %></p>
+  <p> <%= f.label :year %></p>
+  <p> <%= f.text_field :year %></p>
+  <p> <%= f.label :duration %></p>
+  <p> <%= f.text_field :duration %></p>
+  <p> <%= f.label :doc_summary_short %></p>
+  <p> <%= f.text_field :doc_summary_short %></p>
+  <p> <%= f.label :doc_summary_long %></p>
+  <p> <%= f.text_field :doc_summary_long %></p>
+  <p> <%= f.label :doc_summary_source %></p>
+  <p> <%= f.text_field :doc_summary_source %></p>
+  <p> <%= f.label :trailer_link %></p>
+  <p> <%= f.text_field :trailer_link %></p>
+
+  <h3>AWARDS</h3>
+  <p> <%= f.simple_fields_for :awards do |award| %></p>
+  <p>Award</p>
+  <p> <%= award.text_field :name %> </p>
+  <p> <%= award.text_field :year %></p>
+  <p> <%= award.text_field :location %></p>
+  <% end %>
+  <%= f.fields_for :awards, @doc.awards.build do |award| %>
+  <div class='links'>
+  <%= link_to_add_association 'add award', f, :awards %>
+  </div>
+  <% end %>
+
+<h2>Useful Links</h2>
+  <%= f.simple_fields_for :links do |link| %>
+  <P>Link</P>
+  <p> <%= link.text_field :description %></p>
+  <p> <%= link.text_field :url %></p>
+<% end %>
+<%= simple_fields_for :links, @doc.links.build do |link| %>
+<div class="links">
+  <%= link_to_add_association 'add link', f, :links %>
+</div>
+<% end %>
+
+
+  <p> <%= f.button :submit %></p>
 <% end %>
