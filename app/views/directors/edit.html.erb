@@ -11,6 +11,8 @@
   <p> <%= f.text_field :birth_year %></p>
   <p> <%= f.label :death_year %></p>
   <p> <%= f.text_field :death_year %></p>
+  <p><%= f.file_field :photo, as: :file %></p>
+
 
   <h2>Useful Links</h2>
   <%= f.simple_fields_for :pages do |page| %>

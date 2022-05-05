@@ -17,6 +17,7 @@
   <p> <%= f.text_field :doc_summary_source %></p>
   <p> <%= f.label :trailer_link %></p>
   <p> <%= f.text_field :trailer_link %></p>
+  <p><%= f.file_field :poster, as: :file %></p>
 
   <h3>AWARDS</h3>
   <p> <%= f.simple_fields_for :awards do |award| %></p>
