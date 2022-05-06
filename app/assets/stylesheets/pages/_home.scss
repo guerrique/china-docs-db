@@ -1,3 +1,53 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  overflow-x: hidden;
+}
+
+body {
+  font-family:"Raleway", sans-serif;
+  line-height: 1;
+  font-weight: 400;
+  color: #555;
+  overflow-x: hidden;
+}
+
+h1 {
+  font-weight: 700;
+  font-size: 2.4rem;
+  text-transform: uppercase;
+}
+
+h2 {
+  font-size: 2.4rem;
+  font-weight: bold;
+}
+
+h3 {
+  font-size: 1.6rem;
+}
+
+.abc-title {
+  color: rgba(160, 39, 45, 0.5);
+  font-size: 4.4rem;
+  margin: 2.4rem 0;
+}
+
+p {
+  font-size: 1.6rem;
+}
+
+/*a:link, a:visited?*/
+a {
+    text-decoration: none;
+}
+
 // Specific CSS for your home-page
 .header-homepage {
   background-image: linear-gradient(rgba(255,255,255,0.2), rgba(255,255,255,0.2)), asset-url('hero2.jpg');
