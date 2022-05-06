@@ -1,11 +1,12 @@
 
   <div class="header header-homepage">
     <div class="header-top">
-      <a href="">
-          <%= image_tag "CDD-logo.png", alt: "China Documentaries Database logo", class: "logo" %>
 
-      </a>
-      <button class="btn-mobile-nav">
+<!--       <a href="">
+
+      </a> -->
+
+      <!-- <button class="btn-mobile-nav">
         <ion-icon class="icon-mobile-nav" name="menu-outline"></ion-icon>
         <ion-icon class="icon-mobile-nav" name="close-outline"></ion-icon>
       </button>
@@ -39,7 +40,52 @@
             <a href="#" class="main-nav-link admin-link">+ Add an author</a>
           </li>
         </ul>
-      </nav>
+      </nav> -->
+
+      <nav class="navbar navbar-light bg-light fixed-top">
+  <div class="container-fluid">
+    <%= link_to "/" do %>
+        <%= image_tag "CDD-logo.png", alt: "China Documentaries Database logo", class: "logo" %>
+      <% end %>
+    <!-- <a class="navbar-brand" href="#">Offcanvas navbar</a> -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Offcanvas</h5>
+        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="offcanvasNavbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Dropdown
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="offcanvasNavbarDropdown">
+              <li><a class="dropdown-item" href="#">Action</a></li>
+              <li><a class="dropdown-item" href="#">Another action</a></li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li><a class="dropdown-item" href="#">Something else here</a></li>
+            </ul>
+          </li>
+        </ul>
+        <form class="d-flex">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</nav>
     </div>
 <!--     <div class="search-bar-homepage">
 
@@ -55,27 +101,32 @@
       <!-- </form> -->
     </div>
   </div>
+  <%= link_to directors_path  do %>
   <div class="section-findby section-findby-author">
-    <a href="directors.html">
+    <!-- <a href="directors.html"> -->
       <div class="container flexbox-center">
           <div class="findby-box">
             <h2>Documentaries</h2>
             <p>by author</p>
           </div>
       </div>
-    </a>
+    <!-- </a> -->
   </div>
+  <% end %>
 
+  <%= link_to docs_path do %>
   <div class="section-findby section-findby-title">
-    <a href="documentaries.html">
+    <!-- <a href="documentaries.html"> -->
       <div class="container flexbox-center">
           <div class="findby-box">
             <h2>Documentaries</h2>
             <p>by title</p>
           </div>
       </div>
-    </a>
+    <!-- </a> -->
   </div>
+  <% end %>
+
   <div class="section-featured">
     <div class="container">
       <h1 class="featured-title">Featured this week</h1>
