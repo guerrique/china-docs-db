@@ -1,8 +1,92 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
-<%= cl_image_tag("klnjkdalc8srgygexkqm",
-      width: 400, height: 300, crop: :fill) %>
 
-<!-- for face detection -->
-<%= cl_image_tag("br9rrqy7a9txm5jdyndw",
-      width: 150, height: 150, crop: :thumb, gravity: :face) %>
+  <div class="header header-homepage">
+    <div class="header-top">
+      <a href="">
+          <%= image_tag "CDD-logo.png", alt: "China Documentaries Database logo", class: "logo" %>
+
+      </a>
+      <button class="btn-mobile-nav">
+        <ion-icon class="icon-mobile-nav" name="menu-outline"></ion-icon>
+        <ion-icon class="icon-mobile-nav" name="close-outline"></ion-icon>
+      </button>
+      <nav class="main-nav">
+        <ul class="main-nav-list">
+          <li>
+            <a href="#" class="main-nav-link">HOME</a>
+          </li>
+          <li>
+            <a href="#" class="main-nav-link">+ Search</a>
+          </li>
+          <li>
+            <a href="directors.html" class="main-nav-link" id="authors-link">+ Find by author</a>
+          </li>
+          <li>
+            <a href="documentaries.html" class="main-nav-link">+ Find by title</a>
+          </li>
+          <li>
+            <a href="#" class="main-nav-link">+ Get a random one</a>
+          </li>
+          <li>
+            <a href="#" class="main-nav-link">+ About</a>
+          </li>
+          <li>
+            <a href="#" class="main-nav-link">&nbsp;</a>
+          </li>
+          <li>
+            <a href="#" class="main-nav-link admin-link">+ Add a doc</a>
+          </li>
+          <li>
+            <a href="#" class="main-nav-link admin-link">+ Add an author</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+<!--     <div class="search-bar-homepage">
+
+      <input type="search" placeholder="Search">
+      <ion-icon class="icon-search" name="search-outline"></ion-icon>
+    </div> -->
+    <div class="search-bar-homepage">
+      <!-- <form class="search"> -->
+        <input type="search" placeholder="Search" class="search__field">
+        <!-- <button class="btn search__btn"> -->
+          <ion-icon class="icon-search" name="search-outline"></ion-icon>
+        <!-- </button> -->
+      <!-- </form> -->
+    </div>
+  </div>
+  <div class="section-findby section-findby-author">
+    <a href="directors.html">
+      <div class="container flexbox-center">
+          <div class="findby-box">
+            <h2>Documentaries</h2>
+            <p>by author</p>
+          </div>
+      </div>
+    </a>
+  </div>
+
+  <div class="section-findby section-findby-title">
+    <a href="documentaries.html">
+      <div class="container flexbox-center">
+          <div class="findby-box">
+            <h2>Documentaries</h2>
+            <p>by title</p>
+          </div>
+      </div>
+    </a>
+  </div>
+  <div class="section-featured">
+    <div class="container">
+      <h1 class="featured-title">Featured this week</h1>
+      <div class="featured-box">
+          <h2>Behemoth</h2>
+          <a class="featured-link-author" href="#"><p>by Zhao Liang</p></a>
+          <a class="featured-link-movie" href="#">
+            <%= image_tag "behemoth.jpg", alt: "Behemoth Poster", class: "img_preview" %>
+
+            <!-- <img class="featured-movie-img" src="img/movies/behemoth.jpg" alt=""> -->
+          </a>
+      </div>
+    </div>
+  </div>

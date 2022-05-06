@@ -1,1 +1,344 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  overflow-x: hidden;
+}
+
+body {
+  font-family:"Raleway", sans-serif;
+  line-height: 1;
+  font-weight: 400;
+  color: #555;
+  overflow-x: hidden;
+}
+
+h1 {
+  font-weight: 700;
+  font-size: 2.4rem;
+  text-transform: uppercase;
+}
+
+h2 {
+  font-size: 2.4rem;
+  font-weight: bold;
+}
+
+h3 {
+  font-size: 1.6rem;
+}
+
+.abc-title {
+  color: rgba(160, 39, 45, 0.5);
+  font-size: 4.4rem;
+  margin: 2.4rem 0;
+}
+
+p {
+  font-size: 1.6rem;
+}
+
+/*a:link, a:visited?*/
+a {
+    text-decoration: none;
+}
+
 // Specific CSS for your home-page
+.header-homepage {
+  background-image: linear-gradient(rgba(255,255,255,0.2), rgba(255,255,255,0.2)), asset-url('hero2.jpg');
+  background-size: cover;
+  height: 30rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-bottom: 2.4rem;
+  box-shadow: 0 2.4rem 3.2rem rgba(0, 0, 0, 0.1);
+}
+
+
+.header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 1.6rem 1.6rem;
+}
+
+.logo {
+  height: 8rem;
+  background-color: #fff;
+  border-radius: 13px;
+}
+
+.btn-mobile-nav {
+  border: none;
+  background: none;
+  pointer: cursor;
+}
+
+.icon-mobile-nav {
+  height: 4rem;
+  width: 4rem;
+  color: #555;
+  /*z-index: 1000;*/
+}
+
+.icon-mobile-nav[name="close-outline"] {
+  display: none;
+}
+
+.search-bar-homepage {
+  display: flex;
+  justify-content: center;
+  height: 4rem;
+  position: relative;
+  background-color: #f9f9f9;
+  margin: 0 8rem;
+  border-radius: 6px;
+}
+
+input {
+  border: none;
+  height: 100%;
+  width: 70%;
+  background-color: #f9f9f9;
+  font-family: inherit;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+input::placeholder {
+  color: #ccc;
+}
+
+.icon-search {
+  height: 2rem;
+  width: 2rem;
+  color: #ccc;
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translate(0, -50%);
+}
+
+/**********************************************/
+/*MOBILE NAVIGATION*/
+/**********************************************/
+
+.btn-mobile-nav {
+    display: block;
+    z-index: 1000;
+  }
+
+.main-nav {
+  background-color: #fff;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 70%;
+  height: 100vh;
+  padding: 4.8rem;
+  transform: translateX(100%);
+
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transition: all 0.5s ease-in;
+
+  z-index: 999;
+
+  /* Hide the navigation*/
+  /* Problem with display none, can't do animations on it*/
+  /*display: none;*/
+
+  /* 1) Hide element visuall*/
+  opacity: 0;
+
+  /* 2) Make it unacessible to mouse and keyboard */
+  pointer-events: none;
+
+  /* 3) Hide from screen readers*/
+  visibility: hidden;
+}
+
+.nav-open .main-nav {
+  opacity: 1;
+  pointer-events: auto;
+  visibility: visible;
+  transform: translateX(0);
+}
+
+.nav-open .icon-mobile-nav[name="close-outline"] {
+  display: block;
+}
+
+.nav-open .icon-mobile-nav[name="menu-outline"] {
+  display: none;
+}
+
+/*.main-nav-list {
+  gap: 0.8rem;
+}*/
+
+.main-nav-link:link,
+.main-nav-link:visited {
+  font-size: 1.6rem;
+}
+
+
+
+/****************************/
+
+.main-nav-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  gap: 2.4rem;
+}
+
+.main-nav-link:link,
+.main-nav-link:visited {
+  display: inline-block;
+  text-decoration: none;
+  color: #555;
+  font-weight: 500;
+  font-size: 1.6rem;
+  transition: all 0.3s;
+}
+
+.main-nav-link:hover,
+.main-nav-link:active {
+  color: #cf711f;
+}
+
+.admin-link:link,
+.admin-link:visited {
+  color: #a0272d;
+}
+
+
+
+/**********************************************/
+/*SECTION LINK*/
+/**********************************************/
+
+.section-findby {
+  height: 12rem;
+  margin: 2.4rem auto;
+  box-shadow: 0 2.4rem 3.2rem rgba(0, 0, 0, 0.1);
+
+}
+
+.section-find-by a:link,
+.section-findby a:visited {
+  pointer: cursor;
+}
+
+.section-findby-author {
+  text-decoration: none;
+  /*background-color: #bdccd4;*/
+  background-image: linear-gradient(rgba(255,255,255,0.4), rgba(255,255,255,0.4)), asset-url('link-author.jpg');
+  background-size: 130%;
+  background-position: left center;
+}
+
+.section-findby-title {
+  /*background-color: #c7c8c3;*/
+  background-image: linear-gradient(rgba(255,255,255,0.4), rgba(255,255,255,0.4)), asset-url('link-movie1.png');
+  background-size: 100%;
+  background-position: center top;
+
+}
+
+/*.section-findby-title h2,
+.section-findby-title p {
+  color: #fff;
+}*/
+
+.container {
+  max-width: 120rem;
+  padding: 0 3.2rem;
+  margin: 0 auto;
+  height: 100%;
+}
+
+.flexbox-center {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+
+.findby-box {
+  padding: 3.2rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  color: #555;
+}
+
+/*.findby-box h2 {
+  font-size: 2.4rem;
+}*/
+
+/*.findby-box p {
+  font-size: 1.6rem;
+}*/
+
+
+/**********************************************/
+/*SECTION RANDOM PICK*/
+/**********************************************/
+
+.section-featured {
+  margin: 2.4rem auto;
+  background-color: rgba(160, 39, 45, 0.35);
+  /*height: 25.6rem;*/
+  padding: 1.2rem 0 2.4rem 0;
+}
+
+.featured-title {
+  color: #fff;
+  padding: 1.2rem 0;
+
+}
+
+.featured-box {
+  /*height: 20rem;*/
+  padding: 2.4rem;
+  background-color: #fff;
+  border: 5px solid #a0272d;
+  border-radius: 12px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  align-items: center;
+}
+
+.featured-box a:link,
+.featured-box a:visited {
+  color: #555;
+  pointer: cursor;
+}
+
+.featured-box img {
+  width: 100%;
+  padding-top: 2.4rem;
+}
+
+
+
+// .logo {
+//   background-image: asset-url('logo.png');
+//   background-size: cover;
+//   height: 100px;
+//   width: 250px;
+// }
