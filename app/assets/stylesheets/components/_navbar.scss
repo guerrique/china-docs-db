@@ -13,9 +13,17 @@
 }
 
 .navbar-toggler {
+  padding: 0.25rem 1.75rem;
+  font-size: 2.3rem;
+  border: none;
+}
+
+.offcanvas-header .btn-close {
     padding: 0.25rem 1.75rem;
     font-size: 2.3rem;
-    border: none;
+    margin-top: -0.5rem;
+    margin-right: -0.5rem;
+    margin-bottom: -0.5rem;
 }
 
 .search-bar-homepage {
