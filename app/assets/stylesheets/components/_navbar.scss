@@ -1,12 +1,53 @@
-.navbar-lewagon {
+
+.header-top {
+  display: flex;
   justify-content: space-between;
-  background: white;
+  align-items: flex-start;
+  padding: 1.6rem 1.6rem;
 }
 
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
+.logo {
+  height: 8rem;
+  background-color: #fff;
+  border-radius: 13px;
 }
 
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
+.navbar-toggler {
+    padding: 0.25rem 1.75rem;
+    font-size: 2.3rem;
+    border: none;
+}
+
+.search-bar-homepage {
+  display: flex;
+  justify-content: center;
+  height: 4rem;
+  position: relative;
+  background-color: #f9f9f9;
+  margin: 0 8rem;
+  border-radius: 6px;
+}
+
+input {
+  border: none;
+  height: 100%;
+  width: 70%;
+  background-color: #f9f9f9;
+  font-family: inherit;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+input::placeholder {
+  color: #ccc;
+}
+
+.icon-search {
+  height: 2rem;
+  width: 2rem;
+  color: #ccc;
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translate(0, -50%);
 }
