@@ -27,6 +27,7 @@
         <h1 class="featured-title">Featured this week</h1>
         <div class="featured-box">
           <% doc = Doc.find(Doc.ids.sample) %>
+          <!-- User.all.sample(1) -->
 
             <h2><%= doc.name %></h2>
             <a class="featured-link-author" href="#"><p>by <% doc.directors.each do |director| %>
