@@ -26,6 +26,8 @@
       <div class="container">
         <h1 class="featured-title">Featured this week</h1>
         <div class="featured-box">
+          <% doc = Doc.find(Doc.ids.sample) %>
+          <%= doc.name %>
             <h2>Behemoth</h2>
             <a class="featured-link-author" href="#"><p>by Zhao Liang</p></a>
             <a class="featured-link-movie" href="#">
