@@ -1,9 +1,14 @@
-<ul>
-  <% @directors.each do |director| %>
-    <li><%= link_to director.name, director_path(director) %></li>
-    <%= link_to "Edit", edit_director_path(director) %>
-    <%= link_to "Delete", director_path(director), method: :delete %>
+<div class="sections">
+  <% @directors = Director.order("name ASC").group_by{ |u| u.name[0] }  %>
+  <% @directors.each do |letter, directors| %>
+  <h1><%= letter %></h1>
+  <ul>
+    <% directors.each do |director| %>
+      <li> <%= link_to director.name, director_path(director) %> </li>
+      <%= link_to "Edit", edit_director_path(director) %>
+      <%= link_to "Delete", director_path(director), method: :delete %>
+    <% end %>
+  </ul>
   <% end %>
-</ul>
-
+</div>
 
