@@ -167,9 +167,18 @@
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 1.6rem;
+  gap: 2rem;
   font-size: 1.6rem;
   margin-bottom: 4.8rem;
+}
+
+.authors-list li {
+  font-size: 2rem;
+}
+
+.authors-list li p {
+  font-size: 1.2rem;
+  font-color: $gray;
 }
 
 
