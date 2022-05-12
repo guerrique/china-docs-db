@@ -1,0 +1,159 @@
+
+.doc-title {
+  margin: 1.6rem 0 0.8rem 0;
+  font-size: 3rem;
+}
+
+.doc-author {
+  padding-left: 0.8rem;
+  margin-bottom: 2.4rem;
+  /*font-size: 1.6rem;*/
+}
+
+.doc-author a:link,
+.doc-author a:visited {
+  color: #555;
+  text-decoration: underline;
+}
+
+.doc-infos {
+  font-size: 1.2rem;
+  font-weight: 700;
+  padding: 1.2rem 0.8rem;
+  margin-bottom: 2.4rem;
+  display: flex;
+  gap: 3.2rem;
+  background-color: #efefef;
+}
+
+.doc-icon {
+  width: 1.8rem;
+  height: 1.8rem;
+  padding: 0 0.2rem;
+}
+
+.flex-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.doc-chinese-name {
+  align-self: flex-end;
+  margin-left: auto;
+}
+
+.doc-poster {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 2.4rem;
+}
+
+.doc-summary {
+  font-size:  1.4rem;
+  line-height:  1.4;
+  text-indent: 3rem;
+}
+
+.doc-summary p {
+  font-size:  1.4rem;
+  margin-bottom: 4rem;
+}
+
+
+.doc-summary-short {
+}
+
+.doc-summary-long  {
+  display: none;
+}
+
+.active .doc-summary-long {
+  display: block;
+  margin-top:  1.6rem;
+}
+
+
+
+.active .plus-icon {
+  display:  none;
+}
+
+.doc-awards {
+  margin-top: 1.6rem;
+  background-color: #efefef;
+  padding: 1.2rem 0.8rem;
+  margin-bottom:  2rem;
+}
+
+.doc-awards h3 {
+  margin-bottom: 1.6rem;
+}
+
+/*.doc-awards-long {
+  display: none;
+}*/
+
+/*.active .doc-awards-long {
+  display: block;
+  margin-top: 1.6rem;
+}*/
+
+.doc-awards-list {
+  padding: 0 1.2rem;
+  font-size: 1.2rem;
+  font-weight: 500;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+}
+
+
+.star-icon {
+  height:  1.2rem;
+  width: 1.2rem;
+  margin-right: 0.8rem;
+  color: #a0272d;
+  /*stroke: #a0272d;*/
+}
+
+.doc-trailer {
+  margin: 4rem auto;
+}
+
+.doc-trailer h3 {
+  margin-bottom: 1.6rem;
+}
+
+.doc-trailer-video {
+  max-width: 100%;
+}
+
+.doc-more-infos {
+  padding: 2.4rem 0.8rem;
+  background-color: rgba(160, 39, 45, 0.1);
+}
+
+
+.doc-more-infos h2 {
+  margin-bottom: 1.6rem;
+  text-transform: uppercase;
+}
+
+.doc-links-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.doc-links-list a:link,
+.doc-links-list a:visited {
+  color: rgba(160, 39, 45, 0.6);
+  font-size: 1.2rem;
+  font-weight: 700;
+  text-decoration: underline;
+  cursor: pointer;
+}

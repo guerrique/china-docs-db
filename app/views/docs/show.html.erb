@@ -1,17 +1,69 @@
-<h2><%= @doc.name %></h2>
-<p><%= @doc.chinese_name %></p>
-<p><%= @doc.year  %></p>
-<p><%= @doc.duration  %></p>
-<p><%= cl_image_tag @doc.poster.key, height: 300, width: 400, crop: :fill %></p>
-<p><%= @doc.doc_summary_short  %></p>
-<p><%= @doc.doc_summary_long  %></p>
-<p><%= @doc.doc_summary_source  %></p>
-<p><%= @doc.trailer_link  %></p>
-<% @doc.awards.each do |award| %>
-<p><%= award.name %>, <%= award.year %>, <%= award.location %></p>
-<% end %>
-<% @doc.links.each do |link| %>
-<p><%= link.description %>: <%= link.url %></p>
-<% end %>
-<%= link_to "Edit", edit_doc_path(@doc) %>
-<%= link_to "Delete", doc_path(@doc), method: :delete %>
+<div class="page d-flex flex-column min-vh-100">
+  <div class="container">
+        <h2 class="doc-title">
+          <%= @doc.name %>
+        </h2>
+        <h3 class="doc-author">
+          by <% @doc.directors.each do |dir| %>
+          <%= dir.name %>
+          <% end %>
+          <!-- <a href="#">Fan Lixin</a> -->
+        </h3>
+
+        <div class="doc-infos">
+          <div class="doc-year flex-center"><ion-icon class="doc-icon" name="calendar-number-outline"></ion-icon><%= @doc.year  %></div>
+          <div class="doc-duration flex-center"><ion-icon class="doc-icon" name="time-outline"></ion-icon><%= @doc.duration  %></div>
+          <div class="doc-chinese-name"><%= @doc.chinese_name %></div>
+        </div>
+        <%= cl_image_tag @doc.poster.key, class:"doc-poster" %>
+
+        <div class="doc-summary">
+          <div class="doc-summary-short">
+            <p>
+              <%= @doc.doc_summary_short  %>
+              <ion-icon class="plus-icon" name="add-circle-outline"></ion-icon>
+            </p>
+          </div>
+          <div class="doc-summary-long">
+            <p>
+              <%= @doc.doc_summary_long  %>
+            </p>
+            <%= @doc.doc_summary_source  %>
+          </div>
+        </div>
+        <div class="doc-awards">
+          <h3>Awards</h3>
+          <div class="doc-awards-short">
+            <ul class="doc-awards-list">
+              <% @doc.awards.each do |award| %>
+              <li><ion-icon class="star-icon" name="star-outline"></ion-icon> <%= award.name %>, <%= award.year %>, <%= award.location %></li>
+              <% end %>
+            </ul>
+          </div>
+        </div>
+
+        <div class="doc-trailer">
+          <h3>Official Trailer</h3>
+          <div class="embed-responsive embed-responsive-16by9">
+            <iframe class="doc-trailer-video embed-responsive-item" src="<%= video_embed(@doc.trailer_link) %>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+        </div>
+  </div>
+
+  <div class="doc-more-infos">
+    <div class="container">
+      <h2>To go further...</h2>
+      <div class="doc-links">
+        <ul class="doc-links-list">
+          <% @doc.links.each do |link| %>
+          <li>
+            <a href=<%= link.url %>><%= link.description %></a>
+          </li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <%= link_to "Edit", edit_doc_path(@doc) %>
+  <%= link_to "Delete", doc_path(@doc), method: :delete %>
+<!-- </div> -->

@@ -1,3 +1,14 @@
+// .site {
+//   display: flex;
+//   flex-direction: column;
+// }
+
+// .site-content {
+//   flex: 1;
+// }
+
+
+
 // Specific CSS for your home-page
 
 .hero {
@@ -17,9 +28,24 @@
   left: 0;
 }
 
-.sections {
+// .sections {
+//   position: absolute;
+//   top: 30.8rem;
+//   right: 0;
+//   left: 0;
+// }
+
+.container {
+  // position: relative;
+  max-width: 120rem;
+  padding: 0 3.2rem;
+  margin: 0 auto;
+  height: 100%;
+}
+
+.page {
   position: absolute;
-  top: 30.8rem;
+  top: 12rem;
   right: 0;
   left: 0;
 }
@@ -52,12 +78,7 @@
   background-position: center top;
 }
 
-.container {
-  max-width: 120rem;
-  padding: 0 3.2rem;
-  margin: 0 auto;
-  height: 100%;
-}
+
 
 .flexbox-center {
   display: flex;
@@ -128,12 +149,7 @@
 /**********************************************/
 /*DIRECTORS PAGE*/
 /**********************************************/
-.page {
-  position: absolute;
-  top: 12rem;
-  right: 0;
-  left: 0;
-}
+
 
 .header-text {
   display: flex;
