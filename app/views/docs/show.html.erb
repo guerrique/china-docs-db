@@ -3,8 +3,6 @@
         <h2 class="doc-title">
           <%= @doc.name %>
         </h2>
-  <%= puts current_user %>
-
         <h3 class="doc-author">
           by <% @doc.directors.each do |dir| %>
           <%= dir.name %>
@@ -66,8 +64,12 @@
       </div>
     </div>
   </div>
-  <%# if current_user.is_admin? %>
-  <%#= link_to "Edit", edit_doc_path(@doc) %>
-  <%#= link_to "Delete", doc_path(@doc), method: :delete %>
-  <%# end %>
+    <% if current_user %>
+        <% if current_user.admin? %>
+          <div> <%= link_to "Edit", edit_doc_path(@doc) %>
+                <%= link_to "Delete", doc_path(@doc), method: :delete %>
+          </div>
+        <% end %>
+    <% end %>
+
 <!-- </div> -->
