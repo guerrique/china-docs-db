@@ -5,7 +5,8 @@
         </h2>
         <h3 class="doc-author">
           by <% @doc.directors.each do |dir| %>
-          <%= dir.name %>
+          <%= link_to dir.name, director_path(dir) %>
+          <%#= dir.name %>
           <% end %>
           <!-- <a href="#">Fan Lixin</a> -->
         </h3>
