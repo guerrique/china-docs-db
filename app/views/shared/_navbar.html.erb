@@ -1,7 +1,7 @@
 
   <div class="header">
     <div class="header-top">
-      <nav class="navbar navbar-light fixed-top">
+      <nav class="navbar navbar-top navbar-light fixed-top">
         <div class="container-fluid">
           <%= link_to "/" do %>
             <%= image_tag "CDD-logo.png", alt: "China Documentaries Database logo", class: "logo" %>
@@ -19,12 +19,22 @@
             <div class="offcanvas-body">
               <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
                 <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="#">Home</a>
+                  <%= link_to "Home", "/", class: "nav-link active" %>
+                  <!-- <a class="nav-link active" aria-current="page" href="#">Home</a> -->
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#">Link</a>
+                  <%= link_to "Find by Author", "/directors", class: "nav-link" %>
+                  <!-- <a class="nav-link" href="#">Link</a> -->
                 </li>
-                <li class="nav-item dropdown">
+                <li class="nav-item">
+                  <%= link_to "Find by Title", "/docs", class: "nav-link" %>
+                  <!-- <a class="nav-link" href="#">Link</a> -->
+                </li>
+                <li class="nav-item">
+                  <%= link_to "Get a random one", "/docs", class: "nav-link" %>
+                  <!-- <a class="nav-link" href="#">Link</a> -->
+                </li>
+                <!-- <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle" href="#" id="offcanvasNavbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     Dropdown
                   </a>
@@ -36,11 +46,11 @@
                     </li>
                     <li><a class="dropdown-item" href="#">Something else here</a></li>
                   </ul>
-                </li>
+                </li> -->
               </ul>
               <form class="d-flex">
                 <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success" type="submit">Search</button>
+                <button class="btn btn-danger" type="submit">Search</button>
               </form>
             </div>
           </div>
