@@ -34,6 +34,14 @@
                   <%= link_to "Get a random one", "/docs", class: "nav-link" %>
                   <!-- <a class="nav-link" href="#">Link</a> -->
                 </li>
+                <% if !current_user %>
+                  <li class="nav-item">
+                    <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+                  </li>
+                <% end %>
+                <li class="nav-item">
+                  <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "nav-link" %>
+                </li>
                 <!-- <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle" href="#" id="offcanvasNavbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     Dropdown
@@ -52,6 +60,18 @@
                 <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                 <button class="btn btn-danger" type="submit">Search</button>
               </form>
+              <% if current_user %>
+                <% if current_user.admin? %>
+                  <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                    <li class="nav-item">
+                      <%= link_to "Create a new documentary", "/docs/new", class: "nav-link" %>
+                    </li>
+                    <li class="nav-item">
+                      <%= link_to "Create a new director", "/directors/new", class: "nav-link" %>
+                    </li>
+                  </ul>
+                <% end %>
+              <% end %>
             </div>
           </div>
         </div>

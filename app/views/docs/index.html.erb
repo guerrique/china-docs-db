@@ -16,7 +16,11 @@
       <ul class="authors-list">
          <% docs.each do |doc| %>
         <li> <%= link_to doc.name, doc_path(doc) %>
-          <p> <%= link_to "Edit", edit_doc_path(doc) %> <%= link_to "Delete", doc_path(doc), method: :delete %></p>
+          <% if current_user %>
+            <% if current_user.admin? %>
+              <p> <%= link_to "Edit", edit_doc_path(doc) %> <%= link_to "Delete", doc_path(doc), method: :delete %></p>
+            <% end %>
+          <% end %>
           </li>
       <% end %>
       </ul>
