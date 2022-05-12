@@ -1,3 +1,44 @@
+.fixed-top {
+  position: absolute;
+  // top: 8px;
+  // left: 8px;
+}
+
+.navbar-top {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+}
+
+.navbar .container-fluid {
+  align-items: flex-start;
+}
+
+.offcanvas-end {
+  width: 70%;
+}
+
+.navbar-nav {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 2rem;
+    padding-left: 0;
+    margin-bottom: 3rem;
+    list-style: none;
+    font-size: 1.8rem;
+}
+
+.form-control {
+  border-radius: 8px;
+}
+
+.btn-danger {
+  color: #fff;
+  background-color: #a0272d;
+  border-color: #a0272d;
+  border-radius: 0.8rem;
+}
 
 .header-top {
   display: flex;
@@ -13,9 +54,17 @@
 }
 
 .navbar-toggler {
+  padding: 0.25rem 1.75rem;
+  font-size: 2.3rem;
+  border: none;
+}
+
+.offcanvas-header .btn-close {
     padding: 0.25rem 1.75rem;
     font-size: 2.3rem;
-    border: none;
+    margin-top: -0.5rem;
+    margin-right: -0.5rem;
+    margin-bottom: -0.5rem;
 }
 
 .search-bar-homepage {
