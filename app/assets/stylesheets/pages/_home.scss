@@ -12,6 +12,17 @@ input[type=checkbox]
   height: 12px;
 }
 
+.form-control {
+  font-size: 2rem;
+}
+
+.my-search input:focus {
+  background-color: $light-gray;
+}
+
+.my-search input:focus::placeholder {
+  color: transparent;
+}
 
 
 // Specific CSS for your home-page
