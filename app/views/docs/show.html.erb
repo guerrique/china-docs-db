@@ -1,4 +1,4 @@
-<div class="page d-flex flex-column min-vh-100">
+<!-- <div class="page d-flex flex-column min-vh-100"> -->
   <div class="container">
         <h2 class="doc-title">
           <%= @doc.name %>
@@ -9,8 +9,8 @@
               <%= link_to dir.name, director_path(dir) %>
               <% end %>
             <% else %>
-            by <%@doc.directors.each do |dir| %>
-              <%= link_to dir.name, director_path(dir) %><%= ", " unless dir == @doc.directors.last %>
+              by <%@doc.directors.each do |dir| %>
+                <%= link_to dir.name, director_path(dir) %><%= ", " unless dir == @doc.directors.last %>
             <% end %>
           <% end %>
         </h3>
@@ -77,4 +77,4 @@
         <% end %>
     <% end %>
 
-<!-- </div> -->
+</div>

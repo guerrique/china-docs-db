@@ -1,3 +1,4 @@
+
   <div class="hero fixed-top">
     <form class="d-flex my-search">
       <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
@@ -28,21 +29,3 @@
         </div>
     </div>
   <% end %>
-
-  <div class="section-featured">
-    <div class="container">
-      <h1 class="featured-title">Featured this week</h1>
-      <div class="featured-box">
-        <% doc = Doc.find(Doc.ids.sample) %>
-          <h2><%= doc.name %></h2>
-          <a class="featured-link-author" href="#"><p>by <% doc.directors.each do |director| %>
-            <%= link_to director.name, director_path(director) %>
-            <%= director.name %> <% end %>
-          </p></a>
-          <a class="featured-link-movie" href="#">
-            <%= image_tag "behemoth.jpg", alt: "Behemoth Poster", class: "img_preview" %>
-          </a>
-      </div>
-    </div>
-  </div>
-</div>

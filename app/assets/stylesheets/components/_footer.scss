@@ -1,13 +1,8 @@
-// footer {
-//   padding-bottom:  2.2rem;
-// }
-
-// .flex-footer {
-//   height: 6rem;
-//   display: flex;
-//   align-items: flex-end;
-//   justify-content: center;
-//   font-weight: 700;
-//   font-size: 1 rem;
-//   margin-bottom: 6rem;
-// }
+footer {
+  position: relative;
+  bottom: 0;
+  height: 2rem;
+  // background: #3167b1;
+  width: 100%;
+  left: 0;
+}

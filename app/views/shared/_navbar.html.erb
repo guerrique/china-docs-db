@@ -32,7 +32,7 @@
                 </li>
                 <li class="nav-item">
                   <% doc = Doc.find(Doc.ids.sample) %>
-                  <%= link_to "Get a random one", doc_path(doc), class: "nav-link" %>
+                  <%= link_to "Random documentary", doc_path(doc), class: "nav-link" %>
                 </li>
                 <% if !current_user %>
                   <li class="nav-item">
