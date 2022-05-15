@@ -34,6 +34,9 @@
                   <% doc = Doc.find(Doc.ids.sample) %>
                   <%= link_to "Random documentary", doc_path(doc), class: "nav-link" %>
                 </li>
+                <li class="nav-item">
+                  <%= link_to "About", about_path, class: "nav-link" %>
+                </li>
                 <% if !current_user %>
                   <li class="nav-item">
                     <%= link_to "Login", new_user_session_path, class: "nav-link" %>
