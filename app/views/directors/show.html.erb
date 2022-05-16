@@ -5,13 +5,15 @@
         <h1> <%= @director.name %> </h1>
           <div class="doc-summary">
             <p><%= @director.bio_short %></p>
-            <p><%= @director.bio_long %></p>
+            <p><%= @director.bio_long %>
+
             <span>Source <%= @director.bio_source %></span>
+            </p>
           </div>
         </div>
       </div>
       <div class="section-author-filmo">
-        <h3 class="section-author-filmo-title">Filmography</h3>
+        <h2 class="section-author-filmo-title">Filmography</h2>
         <div class="section-author-filmo-list">
           <ul>
             <% @director.docs.each do |doc| %>

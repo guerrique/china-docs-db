@@ -66,7 +66,7 @@
               </form>
               <% if current_user %>
                 <% if current_user.admin? %>
-                  <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                  <ul class="navbar-nav justify-content-end flex-grow-1 pe-3 admin-menu">
                     <li class="nav-item">
                       <%= link_to "Create a new documentary", "/docs/new", class: "nav-link" %>
                     </li>
