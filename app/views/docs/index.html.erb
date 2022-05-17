@@ -1,30 +1,30 @@
-<!-- <div class="sections"> -->
-<!-- <div class="page"> -->
-  <div class="header-text">
-    <p>documentaries</p>
-    <h1>By title</h1>
-  </div>
-  <div class="grid-container">
-    <div class="input-box">
-      <input type="text" class="form-control">
-      <i class="fa fa-search"></i>
-    </div>
-    <div class="section-authors">
-      <% @docs = Doc.order("name ASC").group_by{ |u| u.name[0] }  %>
-      <% @docs.each do |letter, docs| %>
-        <h1 class="abc-title"><%= letter %></h1>
-        <ul class="authors-list">
-           <% docs.each do |doc| %>
-          <li> <%= link_to doc.name, doc_path(doc) %>
-            <% if current_user %>
-              <% if current_user.admin? %>
-                <p> <%= link_to "Edit", edit_doc_path(doc) %> <%= link_to "Delete", doc_path(doc), method: :delete %></p>
-              <% end %>
+<div class="header-text">
+  <p>documentaries</p>
+  <h1>By title</h1>
+</div>
+<div class="grid-container">
+  <%= simple_form_for :search, url: docs_path, method: "GET", html: { class: 'form-inline' } do |f| %>
+      <%= f.input :name, input_html: {value: "Search"}, class: "form-control", label: false %>
+  <% end %>
+<!--   <div class="input-box">
+    <input type="text" class="form-control">
+    <i class="fa fa-search"></i>
+  </div> -->
+  <div class="section-authors">
+    <% @docs = @docs.order("name ASC").group_by{ |u| u.name[0] }  %>
+    <% @docs.each do |letter, docs| %>
+      <h1 class="abc-title"><%= letter %></h1>
+      <ul class="authors-list">
+         <% docs.each do |doc| %>
+        <li> <%= link_to doc.name, doc_path(doc) %>
+          <% if current_user %>
+            <% if current_user.admin? %>
+              <p> <%= link_to "Edit", edit_doc_path(doc) %> <%= link_to "Delete", doc_path(doc), method: :delete %></p>
             <% end %>
-            </li>
-        <% end %>
-        </ul>
+          <% end %>
+          </li>
       <% end %>
-    </div>
+      </ul>
+    <% end %>
   </div>
-<!-- </div> -->
+</div>
