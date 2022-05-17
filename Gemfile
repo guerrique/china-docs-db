@@ -25,7 +25,7 @@ gem 'redis', '~> 4.0'
 gem "cocoon"
 gem 'jquery-rails'
 gem 'cloudinary'
-
+gem 'pg_search'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
