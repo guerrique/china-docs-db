@@ -1,4 +1,5 @@
 class Director < ApplicationRecord
+
   has_many :projects
   has_many :docs, through: :projects
   has_many :pages, inverse_of: :director, dependent: :destroy
