@@ -1,4 +1,6 @@
 class Doc < ApplicationRecord
+  include PgSearch::Model
+  multisearchable against: [:name]
   has_many :projects
   has_many :directors, through: :projects
   has_many :awards, inverse_of: :doc, dependent: :destroy

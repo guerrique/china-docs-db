@@ -1,0 +1,16 @@
+
+
+<%# @results.each do |result| %>
+<%#= link_to pg_search_document.searchable.title, pg_search_document.searchable %>
+--------------------------------------
+<% puts @results %>
+Number of results : <%= @results.count %>
+--------------------------------------
+
+
+
+<ul>
+  <% @results.each do |result| %>
+    <li><%= link_to result.searchable.name, "../#{(result.searchable.class).to_s.downcase!.pluralize}/#{result.searchable.id}" %></li>
+  <% end %>
+</ul>

@@ -1,10 +1,25 @@
   <div class="hero fixed-top">
     <!-- <div class="hero"> -->
-    <form class="d-flex my-search">
+
+<!-- <div class="d-flex"> -->
+  <%= simple_form_for :search, url: search_path, method: "GET" do |f| %>
+  <div class="d-flex my-search">
+    <%= text_field_tag :query, params[:query], class: "form-control me-2", value: "Search" %>
+    <%= f.button :submit, 'Search', class: "btn btn-danger" %>
+  </div>
+  <% end %>
+<!-- </div> -->
+
+  <%#= simple_form_for :search, url: search_path, method: "GET", html: { class: 'form-inline' } do |f| %>
+    <%#= text_field_tag :query, params[:query] %>
+  <%# end %>
+
+    <div class="d-flex my-search">
       <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
       <button class="btn btn-danger" type="submit">Search</button>
-    </form>
+    </div>
   </div>
+
 
   <%= link_to directors_path  do %>
   <div class="sections">
