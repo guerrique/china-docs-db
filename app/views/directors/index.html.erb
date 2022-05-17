@@ -1,5 +1,5 @@
 <!-- <div class="sections"> -->
-  <div class="page">
+<!-- <div class="page"> -->
   <div class="header-text">
     <p>documentaries</p>
     <h1>By author</h1>
@@ -9,21 +9,22 @@
       <input type="text" class="form-control">
       <i class="fa fa-search"></i>
     </div>
-  <div class="section-authors">
-    <% @directors = Director.order("name ASC").group_by{ |u| u.name[0] }  %>
-    <% @directors.each do |letter, directors| %>
-      <h1 class="abc-title"><%= letter %></h1>
-      <ul class="authors-list">
-         <% directors.each do |director| %>
-        <li> <%= link_to director.name, director_path(director) %>
-          <% if current_user %>
-            <% if current_user.admin? %>
-          <p> <%= link_to "Edit", edit_director_path(director) %> <%= link_to "Delete", director_path(director), method: :delete %></p>
+    <div class="section-authors">
+      <% @directors = Director.order("name ASC").group_by{ |u| u.name[0] }  %>
+      <% @directors.each do |letter, directors| %>
+        <h1 class="abc-title"><%= letter %></h1>
+        <ul class="authors-list">
+           <% directors.each do |director| %>
+          <li> <%= link_to director.name, director_path(director) %>
+            <% if current_user %>
+              <% if current_user.admin? %>
+            <p> <%= link_to "Edit", edit_director_path(director) %> <%= link_to "Delete", director_path(director), method: :delete %></p>
+              <% end %>
             <% end %>
-          <% end %>
-          </li>
+            </li>
+        <% end %>
+        </ul>
       <% end %>
-      </ul>
-    <% end %>
+    </div>
   </div>
-</div>
+<!-- </div> -->

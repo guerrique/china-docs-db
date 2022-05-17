@@ -1,12 +1,46 @@
-<h2><%= @director.name %></h2>
-<p><%= @director.bio_short %></p>
-<p><%= @director.bio_long  %></p>
-<p><%= @director.bio_source  %></p>
-<p><%= @director.birth_year  %></p>
-<p><%= @director.death_year  %></p>
-<p><%= cl_image_tag @director.photo.key, height: 300, width: 400, crop: :fill %></p>
-<% @director.pages.each do |page| %>
-<p><%= page.description %>, <%= page.url %></p>
-<% end %>
-<%= link_to "Edit", edit_director_path(@director) %>
-<%= link_to "Delete", director_path(@director), method: :delete %>
+<div class="container">
+    <div class="section-author">
+      <%= cl_image_tag @director.photo.key, class:"author-photo" %>
+      <div class="section-author-text">
+        <h1> <%= @director.name %> </h1>
+          <div class="doc-summary">
+            <p><%= @director.bio_short %></p>
+            <p><%= @director.bio_long %>
+
+            <span>Source <%= @director.bio_source %></span>
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="section-author-filmo">
+        <h2 class="section-author-filmo-title">Filmography</h2>
+        <div class="section-author-filmo-list">
+          <ul>
+            <% @director.docs.each do |doc| %>
+              <li><%= link_to doc.name, doc_path(doc) %> <% if doc.year? %>(<%= doc.year %>) <% end %></li>
+            <% end %>
+          </ul>
+        </div>
+      </div>
+  </div>
+  <div class="doc-more-infos">
+    <div class="container">
+      <h2>To go further...</h2>
+      <div class="doc-links">
+        <ul class="doc-links-list">
+          <% @director.pages.each do |page| %>
+          <li>
+            <a href=<%= page.url %>><%= page.description %></a>
+          </li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <% if current_user %>
+        <% if current_user.admin? %>
+          <div> <%= link_to "Edit", edit_director_path(@director) %>
+                <%= link_to "Delete", director_path(@director), method: :delete %>
+          </div>
+        <% end %>
+    <% end %>

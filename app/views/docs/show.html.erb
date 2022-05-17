@@ -1,14 +1,18 @@
-<div class="page d-flex flex-column min-vh-100">
+<!-- <div class="page d-flex flex-column min-vh-100"> -->
   <div class="container">
         <h2 class="doc-title">
           <%= @doc.name %>
         </h2>
         <h3 class="doc-author">
-          by <% @doc.directors.each do |dir| %>
-          <%= link_to dir.name, director_path(dir) %>
-          <%#= dir.name %>
+          <% if @doc.directors.count == 1 %>
+            by <% @doc.directors.each do |dir| %>
+              <%= link_to dir.name, director_path(dir) %>
+              <% end %>
+            <% else %>
+              by <%@doc.directors.each do |dir| %>
+                <%= link_to dir.name, director_path(dir) %><%= ", " unless dir == @doc.directors.last %>
+            <% end %>
           <% end %>
-          <!-- <a href="#">Fan Lixin</a> -->
         </h3>
 
         <div class="doc-infos">
@@ -73,4 +77,4 @@
         <% end %>
     <% end %>
 
-<!-- </div> -->
+</div>

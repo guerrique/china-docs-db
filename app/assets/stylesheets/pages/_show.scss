@@ -1,3 +1,6 @@
+// -------------------------------------------
+// Documentary show page
+// ---------------------------------------
 
 .doc-title {
   margin: 1.6rem 0 0.8rem 0;
@@ -51,14 +54,18 @@
 }
 
 .doc-summary {
-  font-size:  1.4rem;
+  // font-size:  1.4rem;
   line-height:  1.4;
   text-indent: 3rem;
 }
 
 .doc-summary p {
   font-size:  1.4rem;
-  margin-bottom: 4rem;
+  margin-bottom: 2rem;
+}
+
+.doc-summary span {
+  text-align: right;
 }
 
 
@@ -157,3 +164,89 @@
   text-decoration: underline;
   cursor: pointer;
 }
+
+// --------------------------------------------------
+// Director show page
+// --------------------------------------------------
+
+
+
+.author-photo {
+  width: 100%;
+}
+
+.section-author-text {
+  margin: 4rem 0;
+  /*margin-bottom: 4rem;*/
+}
+
+
+// .doc-summary {
+//   font-size:  1.4rem;
+//   line-height:  1.4;
+//   text-indent: 3rem;
+// }
+
+// .doc-summary p {
+//   font-size:  1.4rem;
+//   margin-bottom: 4rem;
+// }
+
+.section-author-text h1 {
+  text-align:  center;
+  margin-bottom: 1.6rem;
+}
+
+// .section-author-bio {
+//   line-height:  1.4;
+//   text-indent: 3rem;
+// }
+
+// .section-author-bio p {
+//   font-size:  1.4rem;
+// }
+
+// .section-author-bio-long {
+//   display: none;
+// }
+
+// .active .section-author-bio-long {
+//   display: block;
+//   margin-top: 1.6rem;
+// }
+
+// .active
+.section-author-text span {
+  display: block;
+  font-size: 1rem;
+  font-weight: 600;
+  text-indent: 0;
+}
+
+.section-author-filmo {
+  margin-bottom: 4rem;
+}
+
+// .section-author-filmo h3 {
+//   font-weight: bold;
+// }
+
+.section-author-filmo-title {
+  margin-bottom: 1.8rem;
+}
+
+.section-author-filmo-list a:link,
+.section-author-filmo-list a:visited {
+  color: #777;
+  font-weight: 600;
+  font-size: 1.4rem;
+}
+
+.section-author-filmo-list ul {
+  padding-left:  4rem;
+  /*list-style: none;*/
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
