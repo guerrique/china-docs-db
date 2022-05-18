@@ -1,11 +1,10 @@
 class DirectorsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
   def index
-    @directors = Director.all
-    @search = params["search"]
-    if @search.present?
-      @name = @search["name"]
-      @directors = Director.where("name ILIKE ?", "%#{@name}%")
+    if params[:query].present?
+      @directors = Director.where("name ILIKE ?", "%#{params[:query]}%")
+    else
+      @directors = Director.all
     end
   end
 
@@ -58,7 +57,6 @@ class DirectorsController < ApplicationController
       :birth_year,
       :death_year,
       :photo,
-      :search,
       doc_ids: [],
       pages_attributes: [:id, :description, :url, :_destroy],
       directors_attributes: [:id, :name])
