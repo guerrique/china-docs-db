@@ -1,11 +1,10 @@
 class DocsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
   def index
-    @docs = Doc.all
-    @search = params["search"]
-    if @search.present?
-      @name = @search["name"]
-      @docs = Doc.where("name ILIKE ?", "%#{@name}%")
+    if params[:query].present?
+      @docs = Doc.where("name ILIKE ?", "%#{params[:query]}%")
+    else
+      @docs = Doc.all
     end
   end
 
@@ -61,7 +60,6 @@ class DocsController < ApplicationController
       :doc_summary_source,
       :trailer_link,
       :poster,
-      :search,
       director_ids: [],
       awards_attributes: [:id, :name, :year, :location, :_destroy],
       links_attributes: [:id, :description, :url, :_destroy],

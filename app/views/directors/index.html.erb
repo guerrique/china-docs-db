@@ -3,9 +3,14 @@
     <h1>By author</h1>
   </div>
   <div class="grid-container">
-    <%= simple_form_for :search, url: directors_path, method: "GET", html: { class: 'form-inline' } do |f| %>
-      <%= f.input :name, input_html: {value: "Search"}, class: "form-control", label: false %>
+    <%= form_tag directors_path, method: :get do %>
+      <%= text_field_tag :query,
+        params[:query],
+        class: "form-control",
+        placeholder: "Search"
+      %>
     <% end %>
+
     <div class="section-authors">
       <% @directors = @directors.order("name ASC").group_by{ |u| u.name[0] }  %>
       <% @directors.each do |letter, directors| %>

@@ -3,13 +3,13 @@
   <h1>By title</h1>
 </div>
 <div class="grid-container">
-  <%= simple_form_for :search, url: docs_path, method: "GET", html: { class: 'form-inline' } do |f| %>
-      <%= f.input :name, input_html: {value: "Search"}, class: "form-control", label: false %>
-  <% end %>
-<!--   <div class="input-box">
-    <input type="text" class="form-control">
-    <i class="fa fa-search"></i>
-  </div> -->
+    <%= form_tag docs_path, method: :get do %>
+      <%= text_field_tag :query,
+        params[:query],
+        class: "form-control",
+        placeholder: "Search"
+      %>
+    <% end %>
   <div class="section-authors">
     <% @docs = @docs.order("name ASC").group_by{ |u| u.name[0] }  %>
     <% @docs.each do |letter, docs| %>
