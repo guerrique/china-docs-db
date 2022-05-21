@@ -1,22 +1,36 @@
-<%= simple_form_for @director, url: directors_path do |f| %>
-  <%= f.input :name %>
-  <%= f.input :bio_short %>
-  <%= f.input :bio_long %>
-  <%= f.input :bio_source %>
-  <%= f.input :birth_year %>
-  <%= f.input :death_year %>
-  <%= f.collection_check_boxes :doc_ids, Doc.all, :id, :name, multiple: true%>
+  <div class="container">
+    <% if @director.errors.any? %>
+      <div id="error_explanation">
+        <h2>
+          <%= pluralize(@director.errors.count, "error") %>
+          prohibited this director from being saved :
+        </h2>
+        <ul>
+          <% @director.errors.full_messages.each do |msg|%>
+          <li><%= msg %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+    <div class="form-group">
+      <%= simple_form_for @director, url: directors_path do |f| %>
+        <%= f.input :name %>
+        <%= f.input :bio_short %>
+        <%= f.input :bio_long %>
+        <%= f.input :bio_source %>
+        <%= f.input :birth_year %>
+        <%= f.input :death_year %>
+        <%= f.collection_check_boxes :doc_ids, Doc.all, :id, :name, multiple: true%>
 
-   <%= f.input :photo, as: :file %>
-<h2>To go further</h2>
-<%= f.simple_fields_for :pages do |page| %>
-<%= render 'page_fields', f: page %>
-<% end %>
-<div class="links">
-  <%= link_to_add_association 'add link', f, :pages %>
-</div>
-
-
-
-  <%= f.button :submit %>
-<% end %>
+         <%= f.input :photo, as: :file %>
+      <h2>To go further</h2>
+      <%= f.simple_fields_for :pages do |page| %>
+      <%= render 'page_fields', f: page %>
+      <% end %>
+      <div class="links">
+        <%= link_to_add_association 'add link', f, :pages %>
+      </div>
+        <%= f.button :submit %>
+      <% end %>
+    </div>
+   </div>
