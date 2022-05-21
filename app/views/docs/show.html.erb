@@ -20,8 +20,9 @@
           <div class="doc-duration flex-center"><ion-icon class="doc-icon" name="time-outline"></ion-icon><%= @doc.duration  %></div>
           <div class="doc-chinese-name"><%= @doc.chinese_name %></div>
         </div>
+        <% if @doc.poster.present? %>
         <%= cl_image_tag @doc.poster.key, class:"doc-poster" %>
-
+        <% end %>
         <div class="doc-summary">
           <div class="doc-summary-short">
             <p>
@@ -69,6 +70,7 @@
       </div>
     </div>
   </div>
+  <div class="container">
     <% if current_user %>
         <% if current_user.admin? %>
           <div> <%= link_to "Edit", edit_doc_path(@doc) %>
@@ -76,5 +78,5 @@
           </div>
         <% end %>
     <% end %>
-
-</div>
+  </div>
+<!-- </div> -->
