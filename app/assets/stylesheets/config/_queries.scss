@@ -1,116 +1,38 @@
-/*- Font sizes (px)
-10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+// /*- Font sizes (px)
+// 10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
 
-- Spacing system (px)
-2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
-*/
+// - Spacing system (px)
+// 2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
+// */
 
-
-/********************************/
-/* BELOW 1344px (smaller desktops)  */
-/******************************/
-
-/*84em = 1344/16*/
-@media (max-width: 84em) {
-  .hero {
-    // max-width: 120rem;
-  }
-
-  .heading-primary {
-    // font-size: 4.4rem;
-  }
-
-  .gallery {
-    // grid-template-columns: repeat(2, 1fr);
-  }
-}
+// *********************************
+// * OVER 1344px *
+// *********************************
 
 
-/********************************/
-/* BELOW 1200px (landscape tablets)  */
-/******************************/
-
-@media (max-width: 75em) {
-  // html {
-  //   font-size: 56.25%;
-  // }
-
-  // .grid {
-  //   column-gap: 4.8rem;
-  //   row-gap: 6.4rem ;
-  // }
-}
+// /********************************/
+// /* BELOW 1344px (smaller desktops)  */
+// /******************************/
 
 
-/********************************/
-/* BELOW 944px (tablets)  */
-/******************************/
-@media (max-width: 59em) {
-  html {
-    // font-size: 50%;
-  }
 
-  /*Hero section*/
-  .hero {
-    // grid-template-columns: 1fr;
-    // padding: 0 8rem;
-    // gap: 6.4rem;
-  }
-
-  .hero-img {
-    // width: 60%;
-  }
-
-  /*Featured in section*/
-  /*How it works section*/
-  /*Meals section*/
-  /*Testimonials section*/
+// /********************************/
+// /* BELOW 1200px (landscape tablets)  */
+// /******************************/
 
 
-  /* MOBILE NAVIGATION */
-  .btn-mobile-nav {
-    // display: block;
-  }
-
-  .main-nav {
-    // background-color: #fff;
-    // position: absolute;
-    // top: 0;
-    // left: 0;
-    // width: 100%;
-    // height: 100vh;
-    // transform: translateX(100%);
-}
+// /********************************/
+// /* BELOW 944px (tablets)  */
+// /******************************/
 
 
-/********************************/
-/* BELOW 704px (smaller tablets)  */
-/******************************/
-@media (max-width: 44em) {
-  .grid--3-cols,
-  .grid--4-cols {
-    // grid-template-columns: repeat(2, 1fr);
-  }
-
-  .diets {
-    // grid-column: 1 / -1;
-    // justify-self: center;
-  }
-
-  }
+// /********************************/
+// /* BELOW 704px (smaller tablets)  */
+// /******************************/
 
 
-/********************************/
-/* BELOW 544px (phones)  */
-/******************************/
-
-@media (max-width: 34em) {
-
-  .grid--2-cols,
-  .grid--3-cols,
-  .grid--4-cols {
-    grid-template-columns: 1fr;
-  }
-}
+// /********************************/
+// /* BELOW 544px (phones)  */
+// /******************************/
 
 
