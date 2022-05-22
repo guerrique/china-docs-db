@@ -2,8 +2,7 @@ class SearchController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index]
 
   def index
-    puts 'query :'
-    puts :query
+    @query = params[:query]
     @results = PgSearch.multisearch(params[:query])
   end
 end

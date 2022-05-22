@@ -1,16 +1,21 @@
-
-
-<%# @results.each do |result| %>
-<%#= link_to pg_search_document.searchable.title, pg_search_document.searchable %>
---------------------------------------
-<% puts @results %>
-Number of results : <%= @results.count %>
---------------------------------------
-
-
-
-<ul>
-  <% @results.each do |result| %>
-    <li><%= link_to result.searchable.name, "../#{(result.searchable.class).to_s.downcase!.pluralize}/#{result.searchable.id}" %></li>
-  <% end %>
-</ul>
+<div class="header-text">
+  <p>search results for</p>
+  <h1><%= @query %></h1>
+</div>
+<div class="grid-container">
+  <div class="section-authors search-results">
+    <% @results.each do |letter, results| %>
+        <ul class="authors-list">
+          <% @results.each do |result| %>
+            <li><%= link_to result.searchable.name, "../#{(result.searchable.class).to_s.downcase!.pluralize}/#{result.searchable.id}" %>
+            </li>
+            <% if current_user %>
+              <% if current_user.admin? %>
+                <p> <%= link_to "Edit", edit_doc_path(result.searchable) %> <%= link_to "Delete", doc_path(result.searchable), method: :delete %></p>
+              <% end %>
+            <% end %>
+          <% end %>
+        </ul>
+    <% end %>
+  </div>
+</div>
