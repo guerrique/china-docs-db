@@ -3,6 +3,7 @@ class SearchController < ApplicationController
 
   def index
     @query = params[:query]
+     redirect_to :root if @query == ''
     @results = PgSearch.multisearch(params[:query])
   end
 end

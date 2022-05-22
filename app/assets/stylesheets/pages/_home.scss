@@ -8,6 +8,10 @@ input[type=checkbox]
   width: 20%;
 }
 
+.btn-danger:active {
+  background-color: #a0272d;
+}
+
 .search-results {
   margin-top: 2.8rem;
 }

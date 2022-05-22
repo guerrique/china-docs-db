@@ -7,14 +7,8 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 puts "Cleaning database..."
-Doc.destroy_all
+# Doc.destroy_all
+User.destroy_all
 
-puts "Creating docs..."
-mercredi = { name: "Mercredi" }
-pizza_east =  { name: "Pizza East" }
-
-[ mercredi, pizza_east ].each do |attributes|
-  doc = Doc.create!(attributes)
-  puts "Created #{doc.name}"
-end
+guerrique = User.create!(email: "guerrique@gmail.com", password: "guegue321!", admin: true)
 puts "Finished!"
