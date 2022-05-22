@@ -11,6 +11,8 @@
 @import "components/index";
 @import "pages/index";
 
+
+
 // CSS for the whole site
 * {
   margin: 0;
@@ -21,6 +23,9 @@
 html {
   font-size: 62.5%;
   overflow-x: hidden;
+  position: relative;
+  min-height: 100%;
+  padding-bottom:2rem;
 }
 
 body {
@@ -30,6 +35,7 @@ body {
   color: #555;
   overflow-x: hidden;
   padding-top: 80px;
+  margin-bottom: 160px;
 }
 
 h1 {
