@@ -20,7 +20,7 @@
           <li> <%= link_to director.name, director_path(director) %>
             <% if current_user %>
               <% if current_user.admin? %>
-            <p> <%= link_to "Edit", edit_director_path(director) %> <%= link_to "Delete", director_path(director), method: :delete %></p>
+            <p> <%= link_to "Edit", edit_director_path(director) %> <%= link_to "Delete", director_path(director), method: :delete, data: { confirm: 'Are you sure you want to delete this item?'} %></p>
               <% end %>
             <% end %>
             </li>
