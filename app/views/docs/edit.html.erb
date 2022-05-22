@@ -19,6 +19,8 @@
   <p> <%= f.label :trailer_link %></p>
   <p> <%= f.text_field :trailer_link %></p>
   <p><%= f.file_field :poster, as: :file %></p>
+  <p><%= f.label :imgcredit %></p>
+  <p><%= f.text_field :imgcredit %></p>
    <p><%= f.collection_check_boxes :director_ids, Director.all, :id, :name, multiple: true%></p>
 
   <h3>AWARDS</h3>

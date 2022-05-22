@@ -21,7 +21,17 @@
           <div class="doc-chinese-name"><%= @doc.chinese_name %></div>
         </div>
         <% if @doc.poster.present? %>
-        <%= cl_image_tag @doc.poster.key, class:"doc-poster" %>
+          <% if @doc.imgcredit.present? %>
+            <%= cl_image_tag @doc.poster.key,
+            overlay: {font_family:"Arial", :font_size=>12, :text=>@doc.imgcredit},
+            gravity: :south_east,
+            x:5,
+            y:5,
+            color: '#fff',
+            class:"doc-poster" %>
+          <% else %>
+            <%= cl_image_tag @doc.poster.key, class:"doc-poster" %>
+          <% end %>
         <% end %>
         <div class="doc-summary">
           <div class="doc-summary-short">

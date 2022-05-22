@@ -57,6 +57,7 @@ class DirectorsController < ApplicationController
       :birth_year,
       :death_year,
       :photo,
+      :imgcredit,
       doc_ids: [],
       pages_attributes: [:id, :description, :url, :_destroy],
       directors_attributes: [:id, :name])

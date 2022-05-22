@@ -23,6 +23,7 @@
         <%= f.collection_check_boxes :doc_ids, Doc.all, :id, :name, multiple: true%>
 
          <%= f.input :photo, as: :file %>
+         <%= f.input :imgcredit %>
       <h2>To go further</h2>
       <%= f.simple_fields_for :pages do |page| %>
       <%= render 'page_fields', f: page %>
