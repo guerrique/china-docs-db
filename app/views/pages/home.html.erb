@@ -8,28 +8,30 @@
   </div>
 
 
-  <%= link_to directors_path  do %>
   <div class="sections">
-    <div class="section-findby section-findby-author">
-        <div class="container flexbox-center">
-            <div class="findby-box">
-              <h2>Documentaries</h2>
-              <p>by author</p>
+    <div class="sections-flexbox">
+      <%= link_to directors_path  do %>
+        <div class="section-findby section-findby-author">
+            <div class="container flexbox-center">
+                <div class="findby-box">
+                  <h2>Documentaries</h2>
+                  <p>by author</p>
+                </div>
             </div>
         </div>
-    </div>
-  <% end %>
+      <% end %>
 
-  <%= link_to docs_path do %>
-    <div class="section-findby section-findby-title">
-        <div class="container flexbox-center">
-            <div class="findby-box">
-              <h2>Documentaries</h2>
-              <p>by title</p>
+      <%= link_to docs_path do %>
+        <div class="section-findby section-findby-title">
+            <div class="container flexbox-center">
+                <div class="findby-box">
+                  <h2>Documentaries</h2>
+                  <p>by title</p>
+                </div>
             </div>
         </div>
+      <% end %>
     </div>
-  <% end %>
 
   <div class="section-featured">
     <div class="container">

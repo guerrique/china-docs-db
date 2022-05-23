@@ -13,45 +13,208 @@
 @import "pages/index";
 
 
-@media (min-width: 544px) {
+// RESPONSIVE LAYOUT
+// Bigger phones
+@media (min-width: 450px) {
+  // homepage
+  .section-findby {
+    height: 16rem;
+  }
+}
+
+// Small tablets
+@media (min-width: 520px) {
+  // homepage
   .hero {
-    height: 60vh;
+    height: 40rem;
   }
 
   .sections {
-    padding-top: 30rem;
+    padding-top: 29rem;
+  }
+
+  .d-flex {
+    gap: 1rem;
+  }
+
+  .my-search {
+    padding: 0 2rem;
+  }
+}
+
+// Tablets
+@media (min-width: 704px) {
+  // Homepage
+  .hero {
+    height: 60rem;
+  }
+
+  .logo {
+    height: 12rem;
+    border-radius: 22px;
+  }
+
+  .navbar-toggler-icon {
+    height: 2.5em;
+    width: 2.5em;
+  }
+
+  .sections {
+    padding-top: 49rem;
   }
 
   .section-findby {
-  height: 14rem;
+    height: 26rem;
+  }
+
+  .my-search {
+    padding: 0 4rem 4rem 4rem;
+  }
+
+  .my-search .form-control {
+    padding: 2rem;
+  }
+
+  .my-search .btn-danger {
+    font-size: 2rem;
+    color: #e5e5e5;
+  }
+
+  .findby-box {
+    padding-left: 4rem;
+  }
+
+  .findby-box h2 {
+    font-size: 4rem;
+  }
+
+  .findby-box p {
+    font-size: 2.6rem;
+  }
 }
+
+
+// Landscape tablets
+@media (min-width: 1000px) {
+  .hero {
+    height: 80rem;
+  }
+
+  .logo {
+    height: 18rem;
+    border-radius: 30px;
+  }
+
+  .sections {
+    padding-top: 72rem;
+  }
+
+  .sections-flexbox {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .section-findby-title {
+    background-size: 130%;
+  }
+
+  .my-search {
+    padding: 0 10rem 10rem 10rem;
+  }
+
+  .offcanvas {
+    padding-top: 2rem;
+  }
+
+  .offcanvas-end {
+    width: 60%;
+  }
+
+  .offcanvas-header {
+    padding-left: 2rem;
+  }
+
+  .offcanvas-header .logo {
+    height: 12rem;
+    border-radius: 22px;
+  }
+
+  .offcanvas-header .btn-close {
+    font-size: 2.3rem;
+  }
+
+  .offcanvas-body {
+    padding: 1rem 4rem 1rem 4rem;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (min-width: 544px) {
+  .hero {
+    // height: 60rem;
+  }
+
+  .sections {
+    // padding-top: 30rem;
+  }
+
+  .section-findby {
+  // height: 14rem;
+  }
 
   .section-findby-author {
-  background-size: 100%;
-  background-position: center;
-}
+  // background-size: 100%;
+  // background-position: center;
+  }
 
-.section-findby-title {
-  background-size: 100%;
-  background-position: center top;
-}
+  .section-findby-title {
+    // background-size: 100%;
+    // background-position: center top;
+  }
 }
 
 @media (min-width: 704px) {
   .hero {
-    height: 100vh;
-    width: 100%;
+    // height: 100vh;
+    // width: 100%;
   }
 
   .home-search {
-    display: flex;
-    justify-content: center;
+    // display: flex;
+    // justify-content: center;
   }
 
   .my-search {
-    width: 80%;
+    // width: 80%;
 
   }
+}
+
+@media (min-width: 944px) {
+
+}
+
+@media (min-width: 1200px) {
+
+}
+
+@media (min-width: 1344px) {
+
 }
 
 // CSS for the whole site
