@@ -112,6 +112,7 @@
   .sections-flexbox {
     display: flex;
     justify-content: space-around;
+    gap: 1rem;
   }
 
   .section-findby-title {
@@ -145,6 +146,15 @@
 
   .offcanvas-body {
     padding: 1rem 4rem 1rem 4rem;
+  }
+
+
+  .section-findby {
+    box-shadow: 0 0 3rem rgba(0, 0, 0, 0.05);
+  }
+
+  .findby-box {
+    padding: 8.2rem;
   }
 }
 
