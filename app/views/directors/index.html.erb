@@ -3,13 +3,15 @@
     <h1>By author</h1>
   </div>
   <div class="grid-container">
-    <%= form_tag directors_path, method: :get do %>
-      <%= text_field_tag :query,
-        params[:query],
-        class: "form-control",
-        placeholder: "Search"
-      %>
-    <% end %>
+    <div class="index-search">
+      <%= form_tag directors_path, method: :get do %>
+        <%= text_field_tag :query,
+          params[:query],
+          class: "form-control",
+          placeholder: "Search"
+        %>
+      <% end %>
+    </div>
 
     <div class="section-authors">
       <% @directors = @directors.order("name ASC").group_by{ |u| u.name[0] }  %>
