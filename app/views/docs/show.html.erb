@@ -60,9 +60,10 @@
 
         <div class="doc-trailer">
           <h3>Official Trailer</h3>
-          <div class="embed-responsive embed-responsive-16by9">
-            <iframe class="doc-trailer-video embed-responsive-item" src="<%= video_embed(@doc.trailer_link) %>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-          </div>
+
+          <!-- <div class="embed-responsive embed-responsive-16by9"> -->
+            <iframe class="embed-responsive-item" src="<%= video_embed(@doc.trailer_link) %>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <!-- </div> -->
         </div>
   </div>
 
