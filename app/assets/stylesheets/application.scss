@@ -12,6 +12,14 @@
 @import "components/index";
 @import "pages/index";
 
+.grid-doc {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+.doc-infos {
+  width: 100%;
+}
+
 
 .embed-responsive-item,
   iframe,
@@ -167,6 +175,23 @@
   }
 }
 
+@media (min-width: 992px) {
+  .navbar-expand-lg .offcanvas-body {
+      justify-content: center;
+      align-items: baseline;
+  }
+  .offcanvas-body .d-flex {
+    display:none !important;
+  }
+  .navbar-top {
+    top: 46px;
+  }
+
+  .navbar-nav {
+    font-size: 2rem;
+  }
+}
+
 
 // Landscape tablets
 @media (min-width: 1000px) {
@@ -178,6 +203,14 @@
   .logo {
     height: 12rem;
     border-radius: 18px;
+  }
+
+  .navbar-nav {
+    font-size: 2rem;
+  }
+
+  .navbar-top {
+    padding: 2rem;
   }
 
   .my-search {
@@ -234,17 +267,17 @@
 
   // Show doc page
   .container {
-    padding: 0 6rem;
+    padding: 0 10rem;
   }
 
   .doc-title {
     margin: 0;
-    font-size: 6rem;
-    padding: 10rem 0 2rem 0;
+    font-size: 3.2rem;
+    padding: 8rem 0 2rem 0;
   }
 
   .doc-author {
-    font-size: 2.6rem;
+    font-size: 2rem;
   }
 
   .doc-author a:link,
@@ -254,8 +287,9 @@
   }
 
   .doc-infos {
-    font-size: 2rem;
-    margin: 8rem 0 2rem 0;
+    font-size: 1.8rem;
+    margin: 4.8rem auto 2rem 0;
+    padding: 1.2rem 2.2rem;
   }
 
   .doc-icon {
