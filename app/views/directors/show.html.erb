@@ -1,60 +1,64 @@
-<div class="container">
-    <div class="section-author">
-      <% if @director.photo.present? %>
-        <% if @director.imgcredit.present? %>
-          <%= cl_image_tag @director.photo.key,
-            overlay: {font_family:"Arial", :font_size=>12, :text=>@director.imgcredit},
-            gravity: :south_east,
-            x:5,
-            y:5,
-            color: '#fff',
-            class:"author-photo" %>
-        <% else %>
-          <%= cl_image_tag @director.photo.key, class:"author-photo" %>
+<div class="padding-top">
+  <div class="container">
+      <div class="section-author">
+        <% if @director.photo.present? %>
+          <% if @director.imgcredit.present? %>
+            <%= cl_image_tag @director.photo.key,
+              overlay: {font_family:"Arial", :font_size=>12, :text=>@director.imgcredit},
+              gravity: :south_east,
+              x:5,
+              y:5,
+              color: '#fff',
+              class:"author-photo" %>
+          <% else %>
+            <%= cl_image_tag @director.photo.key, class:"author-photo" %>
+          <% end %>
         <% end %>
-      <% end %>
-      <div class="section-author-text">
-        <h1> <%= @director.name %> </h1>
-          <div class="doc-summary">
-            <p><%= @director.bio_short %></p>
-            <p><%= @director.bio_long %>
+        <div class="section-author-text">
+          <h1> <%= @director.name %> </h1>
+            <div class="doc-summary">
+              <p><%= @director.bio_short %></p>
+              <p><%= @director.bio_long %>
 
-            <span>Source <%= @director.bio_source %></span>
-            </p>
+              <span>Source <%= @director.bio_source %></span>
+              </p>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="section-author-filmo">
-        <h2 class="section-author-filmo-title">Filmography</h2>
-        <div class="section-author-filmo-list">
-          <ul>
-            <% @director.docs.each do |doc| %>
-              <li><%= link_to doc.name, doc_path(doc) %> <% if doc.year? %>(<%= doc.year %>) <% end %></li>
+        <div class="section-author-filmo">
+          <h2 class="section-author-filmo-title">Filmography</h2>
+          <div class="section-author-filmo-list">
+            <ul>
+              <% @director.docs.each do |doc| %>
+                <li><%= link_to doc.name, doc_path(doc) %> <% if doc.year? %>(<%= doc.year %>) <% end %></li>
+              <% end %>
+            </ul>
+          </div>
+        </div>
+    </div>
+
+
+    <div class="doc-more-infos">
+      <div class="container">
+        <h2>To go further...</h2>
+        <div class="doc-links">
+          <ul class="doc-links-list">
+            <% @director.pages.each do |page| %>
+            <li>
+              <a href=<%= page.url %>><%= page.description %></a>
+            </li>
             <% end %>
           </ul>
         </div>
       </div>
-  </div>
-  <div class="doc-more-infos">
-    <div class="container">
-      <h2>To go further...</h2>
-      <div class="doc-links">
-        <ul class="doc-links-list">
-          <% @director.pages.each do |page| %>
-          <li>
-            <a href=<%= page.url %>><%= page.description %></a>
-          </li>
-          <% end %>
-        </ul>
-      </div>
     </div>
-  </div>
-  <div class="container">
-    <% if current_user %>
-      <% if current_user.admin? %>
-        <div> <%= link_to "Edit", edit_director_path(@director) %>
-              <%= link_to "Delete", director_path(@director), method: :delete %>
-        </div>
+    <div class="container">
+      <% if current_user %>
+        <% if current_user.admin? %>
+          <div> <%= link_to "Edit", edit_director_path(@director) %>
+                <%= link_to "Delete", director_path(@director), method: :delete %>
+          </div>
+        <% end %>
       <% end %>
-    <% end %>
-  </div>
+    </div>
+</div>

@@ -14,6 +14,464 @@
 
 
 
+
+// RESPONSIVE LAYOUT
+// Bigger phones
+@media (min-width: 450px) {
+  // homepage
+  .section-findby {
+    height: 16rem;
+  }
+}
+
+// Small tablets
+@media (min-width: 520px) {
+  // homepage
+  .hero {
+    height: 40rem;
+  }
+
+  .sections {
+    padding-top: 29rem;
+  }
+
+  .d-flex {
+    gap: 1rem;
+  }
+
+  .my-search {
+    padding: 0 2rem;
+  }
+
+  // Index pages
+  .header-text {
+    padding: 4rem 0 4rem 0;
+  }
+
+  //Navigation
+  .offcanvas {
+    padding-top: 2rem;
+  }
+
+  .offcanvas-end {
+    width: 60%;
+  }
+
+  .offcanvas-header {
+    padding-left: 2rem;
+  }
+
+  .offcanvas-header .logo {
+    // height: 12rem;
+    // border-radius: 22px;
+  }
+
+  .offcanvas-header .btn-close {
+    // font-size: 2.3rem;
+  }
+
+  .offcanvas-body {
+    padding: 1rem 4rem 1rem 4rem;
+  }
+
+  // Show Doc Page
+  .embed-responsive-item,
+  iframe,
+  embed,
+  object,
+  video {
+    // height: 150%;
+    width: 400px;
+    height: 400px;
+    border: 0;
+    text-align: center;
+  }
+}
+
+// Tablets
+@media (min-width: 704px) {
+  // Homepage
+  .hero {
+    // height: 60rem;
+    height: 100vh;
+  }
+
+  .logo {
+    height: 12rem;
+    border-radius: 22px;
+  }
+
+  .navbar-toggler-icon {
+    height: 1.4em;
+    width: 1.4em;
+  }
+
+  .sections {
+    padding-top: 53rem;
+  }
+
+  .section-findby {
+    height: 26rem;
+  }
+
+  .my-search {
+    padding: 0 4rem 4rem 4rem;
+  }
+
+  .my-search .form-control {
+    padding: 2rem;
+  }
+
+  .my-search .btn-danger {
+    font-size: 2rem;
+    color: #e5e5e5;
+  }
+
+  .findby-box {
+    padding-left: 4rem;
+  }
+
+  .findby-box h2 {
+    font-size: 4rem;
+  }
+
+  .findby-box p {
+    font-size: 2.6rem;
+  }
+
+  //Index pages
+  .header-text {
+    padding: 12rem 0 6rem 0;
+    gap: 1.2rem;
+  }
+
+  .header-text p {
+    font-size: 2rem;
+  }
+
+  .index-search {
+    padding: 0 10rem;
+  }
+
+  .section-authors {
+    padding: 10rem 0 10rem 10rem;
+    // padding-left: 10rem;
+  }
+
+  .authors-list {
+    padding-left: 0.8rem;
+    margin-bottom: 10rem;
+  }
+
+
+  // Show doc page
+  .padding-top {
+    padding-top: 80px;
+  }
+
+  .container {
+    padding: 0 6rem;
+  }
+
+  .grid-doc {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    row-gap: 2rem;
+    align-items: start;
+    align-content: start;
+  }
+
+  .doc-title {
+    margin: 0;
+    font-size: 3.2rem;
+    padding: 0 0 1rem 0;
+  }
+
+  .doc-author {
+    font-size: 2rem;
+  }
+
+  .doc-author a:link,
+  .doc-author a:visited {
+    color: #555;
+    text-decoration: none;
+  }
+
+  .grid-item-poster {
+    grid-column: 2;
+    grid-row: 1/3;
+  }
+
+  .doc-poster {
+    margin: 4rem 0 0 0;
+    padding: 0 2rem;
+  }
+
+  .doc-infos {
+    width: 100%;
+    font-size: 1.4rem;
+    margin: 4.8rem auto 2rem 0;
+    padding: 1.2rem 2.2rem;
+  }
+
+  .doc-icon {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  .doc-summary {
+    padding: 0 2rem;
+  }
+
+  .doc-awards {
+    padding: 1.2rem 2rem;
+    grid-column: 1/-1;
+  }
+
+  .doc-awards h3 {
+    font-size: 2.6rem;
+  }
+
+  .doc-more-infos {
+    margin-bottom: 6rem;
+  }
+
+  .doc-awards-list {
+    font-size: 1.4rem;
+  }
+
+  .doc-links-list a:link, .doc-links-list a:visited {
+    font-size: 1.4rem;
+  }
+
+  .doc-trailer h3 {
+    font-size: 2.6rem;
+  }
+
+  .embed-responsive-item,
+  iframe,
+  embed,
+  object,
+  video {
+    // height: 150%;
+    width: 600px;
+    height: 400px;
+    border: 0;
+    text-align: center;
+  }
+
+  // Show director page
+  .section-author-filmo {
+    text-align: center;
+  }
+
+  .section-author-filmo {
+    margin: 10rem 0 10rem 0;
+  }
+
+  .section-author-filmo-list ul {
+    list-style: none;
+    padding-left: 0;
+  }
+}
+
+// Landscape tablets
+@media (min-width: 992px) {
+  // Navigation
+  .navbar-expand-lg .offcanvas-body {
+      justify-content: center;
+      align-items: baseline;
+  }
+
+  .navbar-expand-lg .navbar-nav {
+      flex-direction: row;
+      gap: 1rem;
+  }
+
+  .offcanvas-body .d-flex {
+    display:none !important;
+  }
+  .navbar-top {
+    top: 46px;
+    padding: 2rem;
+  }
+
+  .navbar-nav {
+    font-size: 2rem;
+  }
+
+  // Homepage
+  .hero {
+    height: 80rem;
+  }
+
+  .logo {
+    height: 12rem;
+    border-radius: 22px;
+  }
+
+  .my-search {
+    padding: 0 10rem 10rem 10rem;
+  }
+
+  .sections {
+    padding-top: 72rem;
+  }
+
+  .sections-flexbox {
+    display: flex;
+    justify-content: space-around;
+    gap: 1rem;
+  }
+
+  .section-findby-title {
+    background-size: 130%;
+  }
+
+  .section-findby {
+    box-shadow: 0 0 3rem rgba(0, 0, 0, 0.05);
+  }
+
+  .findby-box {
+    padding: 8.2rem;
+  }
+
+  // Navigation
+  .offcanvas {
+    padding-top: 2rem;
+  }
+
+  .offcanvas-end {
+    width: 60%;
+  }
+
+  .offcanvas-header {
+    padding-left: 2rem;
+  }
+
+  .offcanvas-header .logo {
+    height: 12rem;
+    border-radius: 22px;
+  }
+
+  .offcanvas-header .btn-close {
+    font-size: 2.3rem;
+  }
+
+  .offcanvas-body {
+    padding: 1rem 4rem 1rem 4rem;
+  }
+
+  // Show doc page
+
+  .embed-responsive-item,
+  iframe,
+  embed,
+  object,
+  video {
+    width: 800px;
+  }
+
+  .grid-doc {
+    row-gap: 4rem;
+  }
+
+  .doc-title {
+    padding: 0 0 2rem 0;
+  }
+
+  .grid-item-poster {
+    grid-row: 1/5;
+  }
+
+  .doc-poster {
+    padding: 0 4rem;
+    margin: 4rem 0 8rem 0;
+  }
+
+  .doc-infos {
+    font-size: 1.8rem;
+  }
+
+ .doc-awards {
+    grid-column: 1/2;
+  }
+
+  .doc-trailer {
+    padding: 0 10rem;
+    margin-bottom: 8rem;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (min-width: 544px) {
+  .hero {
+    // height: 60rem;
+  }
+
+  .sections {
+    // padding-top: 30rem;
+  }
+
+  .section-findby {
+  // height: 14rem;
+  }
+
+  .section-findby-author {
+  // background-size: 100%;
+  // background-position: center;
+  }
+
+  .section-findby-title {
+    // background-size: 100%;
+    // background-position: center top;
+  }
+}
+
+@media (min-width: 704px) {
+  .hero {
+    // height: 100vh;
+    // width: 100%;
+  }
+
+  .home-search {
+    // display: flex;
+    // justify-content: center;
+  }
+
+  .my-search {
+    // width: 80%;
+
+  }
+}
+
+@media (min-width: 944px) {
+
+}
+
+@media (min-width: 1200px) {
+
+}
+
+@media (min-width: 1344px) {
+
+}
+
 // CSS for the whole site
 * {
   margin: 0;
@@ -36,7 +494,7 @@ body {
   color: #555;
   overflow-x: hidden;
   padding-top: 80px;
-  margin-bottom: 160px;
+  margin-bottom: 20px;
 }
 
 h1 {
