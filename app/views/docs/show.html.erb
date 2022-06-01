@@ -1,39 +1,43 @@
-<!-- <div class="page d-flex flex-column min-vh-100"> -->
+<div class="padding-top">
   <div class="container">
       <div class="grid-doc">
-        <h2 class="doc-title">
-          <%= @doc.name %>
-        </h2>
-        <h3 class="doc-author">
-          <% if @doc.directors.count == 1 %>
-            by <% @doc.directors.each do |dir| %>
-              <%= link_to dir.name, director_path(dir) %>
+        <div>
+          <h2 class="doc-title">
+            <%= @doc.name %>
+          </h2>
+          <h3 class="doc-author">
+            <% if @doc.directors.count == 1 %>
+              by <% @doc.directors.each do |dir| %>
+                <%= link_to dir.name, director_path(dir) %>
+                <% end %>
+              <% else %>
+                by <%@doc.directors.each do |dir| %>
+                  <%= link_to dir.name, director_path(dir) %><%= ", " unless dir == @doc.directors.last %>
               <% end %>
+            <% end %>
+          </h3>
+
+          <div class="doc-infos">
+            <div class="doc-year flex-center"><ion-icon class="doc-icon" name="calendar-number-outline"></ion-icon><%= @doc.year  %></div>
+            <div class="doc-duration flex-center"><ion-icon class="doc-icon" name="time-outline"></ion-icon><%= @doc.duration  %></div>
+            <div class="doc-chinese-name"><%= @doc.chinese_name %></div>
+          </div>
+        </div>
+        <div class="grid-item-poster">
+          <% if @doc.poster.present? %>
+            <% if @doc.imgcredit.present? %>
+              <%= cl_image_tag @doc.poster.key,
+              overlay: {font_family:"Arial", :font_size=>12, :text=>@doc.imgcredit},
+              gravity: :south_east,
+              x:5,
+              y:5,
+              color: '#fff',
+              class:"doc-poster" %>
             <% else %>
-              by <%@doc.directors.each do |dir| %>
-                <%= link_to dir.name, director_path(dir) %><%= ", " unless dir == @doc.directors.last %>
+              <%= cl_image_tag @doc.poster.key, class:"doc-poster" %>
             <% end %>
           <% end %>
-        </h3>
-
-        <div class="doc-infos">
-          <div class="doc-year flex-center"><ion-icon class="doc-icon" name="calendar-number-outline"></ion-icon><%= @doc.year  %></div>
-          <div class="doc-duration flex-center"><ion-icon class="doc-icon" name="time-outline"></ion-icon><%= @doc.duration  %></div>
-          <div class="doc-chinese-name"><%= @doc.chinese_name %></div>
         </div>
-        <% if @doc.poster.present? %>
-          <% if @doc.imgcredit.present? %>
-            <%= cl_image_tag @doc.poster.key,
-            overlay: {font_family:"Arial", :font_size=>12, :text=>@doc.imgcredit},
-            gravity: :south_east,
-            x:5,
-            y:5,
-            color: '#fff',
-            class:"doc-poster" %>
-          <% else %>
-            <%= cl_image_tag @doc.poster.key, class:"doc-poster" %>
-          <% end %>
-        <% end %>
         <div class="doc-summary">
           <div class="doc-summary-short">
             <p>
@@ -48,7 +52,6 @@
             <%= @doc.doc_summary_source  %>
           </div>
         </div>
-      </div>
         <div class="doc-awards">
           <h3>Awards</h3>
           <div class="doc-awards-short">
@@ -59,6 +62,7 @@
             </ul>
           </div>
         </div>
+      </div>
 
         <div class="doc-trailer">
           <h3>Official Trailer</h3>
@@ -92,4 +96,5 @@
         <% end %>
     <% end %>
   </div>
+</div>
 <!-- </div> -->
