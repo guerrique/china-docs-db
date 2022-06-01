@@ -13,17 +13,7 @@
 @import "pages/index";
 
 
-.embed-responsive-item,
-  iframe,
-  embed,
-  object,
-  video {
-    // height: 150%;
-    width: 800px;
-    height: 400px;
-    border: 0;
-    text-align: center;
-  }
+
 
 // RESPONSIVE LAYOUT
 // Bigger phones
@@ -83,13 +73,27 @@
   .offcanvas-body {
     padding: 1rem 4rem 1rem 4rem;
   }
+
+  // Show Doc Page
+  .embed-responsive-item,
+  iframe,
+  embed,
+  object,
+  video {
+    // height: 150%;
+    width: 400px;
+    height: 400px;
+    border: 0;
+    text-align: center;
+  }
 }
 
 // Tablets
 @media (min-width: 704px) {
   // Homepage
   .hero {
-    height: 60rem;
+    // height: 60rem;
+    height: 100vh;
   }
 
   .logo {
@@ -98,12 +102,12 @@
   }
 
   .navbar-toggler-icon {
-    height: 2.3em;
-    width: 2.3em;
+    height: 1.4em;
+    width: 1.4em;
   }
 
   .sections {
-    padding-top: 49rem;
+    padding-top: 53rem;
   }
 
   .section-findby {
@@ -159,34 +163,143 @@
     margin-bottom: 10rem;
   }
 
+
   // Show doc page
+  .padding-top {
+    padding-top: 80px;
+  }
+
+  .container {
+    padding: 0 6rem;
+  }
+
+  .grid-doc {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    row-gap: 2rem;
+    align-items: start;
+    align-content: start;
+  }
+
   .doc-title {
     margin: 0;
-    // font-size: 6rem;
-    padding: 6rem 0 2rem 0;
+    font-size: 3.2rem;
+    padding: 0 0 1rem 0;
+  }
+
+  .doc-author {
+    font-size: 2rem;
+  }
+
+  .doc-author a:link,
+  .doc-author a:visited {
+    color: #555;
+    text-decoration: none;
+  }
+
+  .grid-item-poster {
+    grid-column: 2;
+    grid-row: 1/3;
+  }
+
+  .doc-poster {
+    margin: 4rem 0 0 0;
+    padding: 0 2rem;
+  }
+
+  .doc-infos {
+    width: 100%;
+    font-size: 1.4rem;
+    margin: 4.8rem auto 2rem 0;
+    padding: 1.2rem 2.2rem;
+  }
+
+  .doc-icon {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  .doc-summary {
+    padding: 0 2rem;
+  }
+
+  .doc-awards {
+    padding: 1.2rem 2rem;
+    grid-column: 1/-1;
+  }
+
+  .doc-awards h3 {
+    font-size: 2.6rem;
+  }
+
+  .doc-more-infos {
+    margin-bottom: 6rem;
+  }
+
+  .doc-awards-list {
+    font-size: 1.4rem;
+  }
+
+  .doc-links-list a:link, .doc-links-list a:visited {
+    font-size: 1.4rem;
+  }
+
+  .doc-trailer h3 {
+    font-size: 2.6rem;
+  }
+
+  .embed-responsive-item,
+  iframe,
+  embed,
+  object,
+  video {
+    // height: 150%;
+    width: 600px;
+    height: 400px;
+    border: 0;
+    text-align: center;
+  }
+
+  // Show director page
+  .section-author-filmo {
+    text-align: center;
+  }
+
+  .section-author-filmo {
+    margin: 10rem 0 10rem 0;
+  }
+
+  .section-author-filmo-list ul {
+    list-style: none;
+    padding-left: 0;
   }
 }
 
+// Landscape tablets
 @media (min-width: 992px) {
+  // Navigation
   .navbar-expand-lg .offcanvas-body {
       justify-content: center;
       align-items: baseline;
   }
+
+  .navbar-expand-lg .navbar-nav {
+      flex-direction: row;
+      gap: 1rem;
+  }
+
   .offcanvas-body .d-flex {
     display:none !important;
   }
   .navbar-top {
     top: 46px;
+    padding: 2rem;
   }
 
   .navbar-nav {
     font-size: 2rem;
   }
-}
 
-
-// Landscape tablets
-@media (min-width: 1000px) {
   // Homepage
   .hero {
     height: 80rem;
@@ -194,15 +307,7 @@
 
   .logo {
     height: 12rem;
-    border-radius: 18px;
-  }
-
-  .navbar-nav {
-    font-size: 2rem;
-  }
-
-  .navbar-top {
-    padding: 2rem;
+    border-radius: 22px;
   }
 
   .my-search {
@@ -258,83 +363,43 @@
   }
 
   // Show doc page
-  .padding-top {
-    padding-top: 80px;
-  }
 
-  .container {
-    padding: 0 6rem;
+  .embed-responsive-item,
+  iframe,
+  embed,
+  object,
+  video {
+    width: 800px;
   }
 
   .grid-doc {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    row-gap: 2rem;
-    align-items: start;
-    align-content: start;
+    row-gap: 4rem;
   }
 
   .doc-title {
-    margin: 0;
-    font-size: 3.2rem;
     padding: 0 0 2rem 0;
   }
 
-  .doc-author {
-    font-size: 2rem;
-  }
-
-  .doc-author a:link,
-  .doc-author a:visited {
-    color: #555;
-    text-decoration: none;
-  }
-
   .grid-item-poster {
-    grid-column: 2;
     grid-row: 1/5;
   }
 
   .doc-poster {
-    margin: 4rem 0 8rem 0;
     padding: 0 4rem;
+    margin: 4rem 0 8rem 0;
   }
 
   .doc-infos {
-    width: 100%;
     font-size: 1.8rem;
-    margin: 4.8rem auto 2rem 0;
-    padding: 1.2rem 2.2rem;
   }
 
-  .doc-icon {
-    width: 2rem;
-    height: 2rem;
-  }
-
-  .doc-summary {
-    padding: 0 2rem;
-  }
-
-  .doc-awards {
-    padding: 1.2rem 2rem;
-  }
-
-  .doc-awards h3 {
-    font-size: 2.6rem;
+ .doc-awards {
+    grid-column: 1/2;
   }
 
   .doc-trailer {
     padding: 0 10rem;
     margin-bottom: 8rem;
-  }
-
-  .doc-awards-list {
-    font-size: 1.4rem;
-  }
-
-  .doc-links-list a:link, .doc-links-list a:visited {
-    font-size: 1.4rem;
   }
 }
 
