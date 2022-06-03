@@ -13,6 +13,7 @@
   <p> <%= f.text_field :death_year %></p>
    <p><%= f.collection_check_boxes :doc_ids, Doc.all, :id, :name, multiple: true%></p>
 
+
   <p><%= f.file_field :photo, as: :file %></p>
     <p><%= f.label :imgcredit %></p>
   <p><%= f.text_field :imgcredit %></p>
